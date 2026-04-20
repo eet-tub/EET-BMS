@@ -37,7 +37,7 @@ This repository is structured in three main subfolders:
 
 - The Hardware folder holds all necessary PCB schematic, Layout and production files
 - The Firmware folder contains the STM32 Source Code and supporting files
-- The Documentation Folder contains additional documentation
+- The Docs Folder contains the documentation of the project
 
 ## Toolchains
 
