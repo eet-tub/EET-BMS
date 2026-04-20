@@ -1,0 +1,8 @@
+<map id="__DMA_HandleTypeDef" name="__DMA_HandleTypeDef">
+<area shape="rect" id="node1" title="DMA handle Structure definition." alt="" coords="433,122,592,149"/>
+<area shape="rect" id="node2" href="$struct_d_m_a_m_u_x___request_gen_status___type_def.html" title=" " alt="" coords="13,5,208,47"/>
+<area shape="rect" id="node3" href="$struct_d_m_a_m_u_x___request_gen___type_def.html" title=" " alt="" coords="5,71,216,98"/>
+<area shape="rect" id="node4" href="$struct_d_m_a_m_u_x___channel___type_def.html" title=" " alt="" coords="17,122,204,149"/>
+<area shape="rect" id="node5" href="$struct_d_m_a___init_type_def.html" title="DMA Configuration Structure definition." alt="" coords="49,173,172,199"/>
+<area shape="rect" id="node6" href="$struct_d_m_a_m_u_x___channel_status___type_def.html" title=" " alt="" coords="25,224,196,265"/>
+</map>

@@ -1,0 +1,11 @@
+digraph "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Drivers/STM32H7xx_HAL\l_Driver/Src/stm32h7xx\l_hal_pwr.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="PWR HAL module driver. This file provides firmware functions to manage the following functionalities ..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="stm32h7xx_hal.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stm32h7xx__hal_8h.html",tooltip="This file contains all the functions prototypes for the HAL module driver."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="stm32h7xx_hal_conf.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ADBMS")(type "KiCad")(uri "${KIPRJMOD}/ADBMS.kicad_sym")(options "")(descr ""))
+  (lib (name "Zelltester_Parts")(type "KiCad")(uri "${KIPRJMOD}/Zelltester_Parts.kicad_sym")(options "")(descr ""))
+)

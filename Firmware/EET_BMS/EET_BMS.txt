@@ -1,0 +1,102 @@
+Configuration	EET_BMS
+STM32CubeMX 	6.17.0
+Date	04/13/2026
+MCU	STM32H755ZITx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+DEBUG	Serial Wire	DEBUG_JTCK-SWCLK	PA14 (JTCK/SWCLK)
+DEBUG	Serial Wire	DEBUG_JTMS-SWDIO	PA13 (JTMS/SWDIO)
+I2C3	I2C	I2C3_SCL	PA8
+I2C3	I2C	I2C3_SDA	PC9
+SYS_M4	SysTick	SYS_M4_VS_Systick	VP_SYS_M4_VS_Systick
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+UART4	Asynchronous	UART4_RX	PD0
+UART4	Asynchronous	UART4_TX	PA0
+USART1	Asynchronous	USART1_RX	PB15
+USART1	Asynchronous	USART1_TX	PB14
+USART2	Single Wire (Half-Duplex)	USART2_TX	PD5
+USART3	Asynchronous	USART3_RX	PD9
+USART3	Asynchronous	USART3_TX	PD8
+USART3	Hardware Flow Control (RS485)	USART3_DE	PD12
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+1	PE2	GPIO_Output	BAT_Discharge
+37	PA0	UART4_TX	
+74	PB14	USART1_TX	
+75	PB15	USART1_RX	
+76	PD8	USART3_TX	
+77	PD9	USART3_RX	
+82	PD12	USART3_DE	
+96	PC9	I2C3_SDA	
+97	PA8	I2C3_SCL	
+102	PA13 (JTMS/SWDIO)	DEBUG_JTMS-SWDIO	
+107	PA14 (JTCK/SWCLK)	DEBUG_JTCK-SWCLK	
+112	PD0	UART4_RX	
+115	PD3	GPIO_Output	BAT_Charge
+116	PD4	GPIO_Input	TLE_Error
+117	PD5	USART2_TX	
+PERIPHERALS	MODES	FUNCTIONS	PINS
+DEBUG	Serial Wire	DEBUG_JTCK-SWCLK	PA14 (JTCK/SWCLK)
+DEBUG	Serial Wire	DEBUG_JTMS-SWDIO	PA13 (JTMS/SWDIO)
+I2C3	I2C	I2C3_SCL	PA8
+I2C3	I2C	I2C3_SDA	PC9
+SYS_M4	SysTick	SYS_M4_VS_Systick	VP_SYS_M4_VS_Systick
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+UART4	Asynchronous	UART4_RX	PD0
+UART4	Asynchronous	UART4_TX	PA0
+USART1	Asynchronous	USART1_RX	PB15
+USART1	Asynchronous	USART1_TX	PB14
+USART2	Single Wire (Half-Duplex)	USART2_TX	PD5
+USART3	Asynchronous	USART3_RX	PD9
+USART3	Asynchronous	USART3_TX	PD8
+USART3	Hardware Flow Control (RS485)	USART3_DE	PD12
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+1	PE2	GPIO_Output	BAT_Discharge
+37	PA0	UART4_TX	
+74	PB14	USART1_TX	
+75	PB15	USART1_RX	
+76	PD8	USART3_TX	
+77	PD9	USART3_RX	
+82	PD12	USART3_DE	
+96	PC9	I2C3_SDA	
+97	PA8	I2C3_SCL	
+102	PA13 (JTMS/SWDIO)	DEBUG_JTMS-SWDIO	
+107	PA14 (JTCK/SWCLK)	DEBUG_JTCK-SWCLK	
+112	PD0	UART4_RX	
+115	PD3	GPIO_Output	BAT_Charge
+116	PD4	GPIO_Input	TLE_Error
+117	PD5	USART2_TX	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : EET_BMS
+Project Folder : C:\Users\pavel\Nextcloud\Arbeit\Projekte\STM32_Projekte\BMS_Backup\EET_BMS_4s\Firmware\EET_BMS
+Toolchain / IDE : STM32CubeIDE
+Firmware Package Name and Version : STM32Cube FW_H7 V1.12.1
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

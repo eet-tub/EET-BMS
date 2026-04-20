@@ -1,0 +1,19 @@
+<map id="initAMS" name="initAMS">
+<area shape="rect" id="node1" title="initilization function for the BMS" alt="" coords="5,208,73,235"/>
+<area shape="rect" id="node2" href="$_t_l_e___abstraction_8c.html#a2d4fee8be8bc93bc731204e759c37cff" title=" " alt="" coords="160,157,267,184"/>
+<area shape="rect" id="node3" href="$_t_l_e___l_l___driver_8h.html#ae89ca0295433064d09938cb0a2c92bcb" title=" " alt="" coords="355,183,427,209"/>
+<area shape="rect" id="node8" href="$_t_l_e___abstraction_8c.html#ab2ba067bbf6f920faba1b5969247f02b" title="Configure the number of cells that are monitored." alt="" coords="121,208,305,235"/>
+<area shape="rect" id="node9" href="$_t_l_e___abstraction_8c.html#aaebcb5a545f191f755cfc482e2e7e4ed" title="Configure overvoltage limit for all cells." alt="" coords="137,5,290,32"/>
+<area shape="rect" id="node10" href="$_t_l_e___abstraction_8c.html#af76d189302866cd2e4e84099226abe2c" title=" " alt="" coords="137,309,289,336"/>
+<area shape="rect" id="node12" href="$_t_l_e___abstraction_8c.html#a024f249705723a9128250f89963b28ce" title="Configure undervoltage limit for all cells." alt="" coords="133,56,294,83"/>
+<area shape="rect" id="node13" href="$_t_l_e___l_l___driver_8h.html#aa89c747b8443bdc578f870c429c240fe" title=" " alt="" coords="159,259,268,285"/>
+<area shape="rect" id="node15" href="$_t_l_e___l_l___driver_8h.html#ad9f8a6faa48492c73020262b413a079f" title=" " alt="" coords="168,360,259,387"/>
+<area shape="rect" id="node16" href="$_t_l_e___l_l___driver_8h.html#aae96cce2379fccda2d6b845e48087f1d" title=" " alt="" coords="161,411,265,437"/>
+<area shape="rect" id="node4" href="$_t_l_e___l_l___driver_8c.html#ac88b5a665b535baa9c435b936eddd33f" title=" " alt="" coords="476,183,584,209"/>
+<area shape="rect" id="node5" href="$_t_l_e___l_l___driver_8c.html#aa27e321a0d7bd2062cd70883a05184c3" title=" " alt="" coords="476,233,584,260"/>
+<area shape="rect" id="node7" href="$_t_l_e___l_l___driver_8c.html#a7719a274d7741efc63f05d398ff8b593" title=" " alt="" coords="491,284,569,311"/>
+<area shape="rect" id="node6" href="$_t_l_e___l_l___driver_8c.html#a4f8fa8632cc9683d887df54582dd543a" title=" " alt="" coords="632,233,727,260"/>
+<area shape="rect" id="node11" href="$_t_l_e___l_l___driver_8h.html#a60da58b67525c445e69b3efd51ede775" title=" " alt="" coords="355,284,426,311"/>
+<area shape="rect" id="node14" href="$_t_l_e___l_l___driver_8c.html#a89428e7799c9cf8e32123e4015320919" title=" " alt="" coords="355,233,427,260"/>
+<area shape="rect" id="node17" href="$_t_l_e___l_l___driver_8c.html#af89e18d7e0645da0702116245351b311" title=" " alt="" coords="353,411,428,437"/>
+</map>

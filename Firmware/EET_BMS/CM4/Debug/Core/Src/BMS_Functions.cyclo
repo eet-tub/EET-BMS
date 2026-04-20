@@ -1,0 +1,11 @@
+../Core/Src/BMS_Functions.c:31:6:BMS_Init	1
+../Core/Src/BMS_Functions.c:59:6:BMS_loop	1
+../Core/Src/BMS_Functions.c:68:6:BMS_Wakeup	1
+../Core/Src/BMS_Functions.c:74:6:BMS_Sleep	1
+../Core/Src/BMS_Functions.c:80:6:BMS_Measure	1
+../Core/Src/BMS_Functions.c:85:13:BMS_CheckLimits	12
+../Core/Src/BMS_Functions.c:148:6:BMS_Balance	3
+../Core/Src/BMS_Functions.c:167:13:BMS_Balancing_Algorithm	8
+../Core/Src/BMS_Functions.c:206:6:BMS_ErrorHandler	5
+../Core/Src/BMS_Functions.c:240:6:BMS_SetNewLimits	1
+../Core/Src/BMS_Functions.c:247:21:BMS_GetLimits	1

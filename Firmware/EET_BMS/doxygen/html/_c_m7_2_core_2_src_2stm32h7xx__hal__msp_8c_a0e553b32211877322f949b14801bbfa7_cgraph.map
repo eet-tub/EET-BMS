@@ -1,0 +1,4 @@
+<map id="HAL_UART_MspInit" name="HAL_UART_MspInit">
+<area shape="rect" id="node1" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node2" href="$_c_m4_2_core_2_inc_2main_8h.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="191,5,292,32"/>
+</map>

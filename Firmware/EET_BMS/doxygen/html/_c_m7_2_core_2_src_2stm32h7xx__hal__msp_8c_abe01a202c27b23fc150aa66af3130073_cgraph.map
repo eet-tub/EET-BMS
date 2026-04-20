@@ -1,0 +1,4 @@
+<map id="HAL_I2C_MspInit" name="HAL_I2C_MspInit">
+<area shape="rect" id="node1" title="I2C MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$_c_m4_2_core_2_inc_2main_8h.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="176,5,277,32"/>
+</map>

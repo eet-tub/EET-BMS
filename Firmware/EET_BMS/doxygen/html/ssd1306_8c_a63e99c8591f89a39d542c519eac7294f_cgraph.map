@@ -1,0 +1,4 @@
+<map id="ssd1306_SetDisplayOn" name="ssd1306_SetDisplayOn">
+<area shape="rect" id="node1" title="Set Display ON/OFF." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$ssd1306_8c.html#a15046f764dd1127bce472d5924356ba0" title=" " alt="" coords="212,5,380,32"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="BMS_Balance" name="BMS_Balance">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,111,57"/>
+<area shape="rect" id="node2" href="$_t_l_e___abstraction_8h.html#a9b171b2bf3f1776be1fd35e157c5bec2" title="Disable Balancing for all cells." alt="" coords="182,5,313,32"/>
+<area shape="rect" id="node8" href="$_b_m_s___functions_8c.html#a695977a77ab7143d74fc932d41f47add" title=" " alt="" coords="159,56,336,83"/>
+<area shape="rect" id="node3" href="$_t_l_e___l_l___driver_8h.html#ae89ca0295433064d09938cb0a2c92bcb" title=" " alt="" coords="572,56,644,83"/>
+<area shape="rect" id="node4" href="$_t_l_e___l_l___driver_8c.html#ac88b5a665b535baa9c435b936eddd33f" title=" " alt="" coords="692,5,800,32"/>
+<area shape="rect" id="node5" href="$_t_l_e___l_l___driver_8c.html#aa27e321a0d7bd2062cd70883a05184c3" title=" " alt="" coords="692,56,800,83"/>
+<area shape="rect" id="node7" href="$_t_l_e___l_l___driver_8c.html#a7719a274d7741efc63f05d398ff8b593" title=" " alt="" coords="707,107,785,133"/>
+<area shape="rect" id="node6" href="$_t_l_e___l_l___driver_8c.html#a4f8fa8632cc9683d887df54582dd543a" title=" " alt="" coords="848,56,943,83"/>
+<area shape="rect" id="node9" href="$_t_l_e___abstraction_8h.html#aac02cccdf3ec7693bd0ebbda8e005d42" title="Configure which cells shall be balanced after the next amsStartBalancing function call." alt="" coords="384,56,524,83"/>
+<area shape="rect" id="node10" href="$_t_l_e___abstraction_8h.html#a982615a556fd65eb791b8c89a1f688fa" title="Enable balancing for configured cells." alt="" coords="388,107,520,133"/>
+</map>

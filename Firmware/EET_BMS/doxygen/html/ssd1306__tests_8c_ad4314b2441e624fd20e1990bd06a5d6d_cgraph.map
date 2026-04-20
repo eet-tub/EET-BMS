@@ -1,0 +1,37 @@
+<map id="ssd1306_TestAll" name="ssd1306_TestAll">
+<area shape="rect" id="node1" title=" " alt="" coords="5,496,124,523"/>
+<area shape="rect" id="node2" href="$ssd1306_8c.html#a77620914b6d1247e7515a36c38672391" title=" " alt="" coords="461,598,555,624"/>
+<area shape="rect" id="node3" href="$ssd1306_8c.html#ade2c3a936ceecc5b8a1d965cc302d2ed" title=" " alt="" coords="214,142,309,168"/>
+<area shape="rect" id="node10" href="$ssd1306__tests_8c.html#aceb5e8d7b71a9a6616e5d75887dd1bf0" title=" " alt="" coords="200,243,323,270"/>
+<area shape="rect" id="node17" href="$ssd1306__tests_8c.html#accb9d6693efeddc0891dba175299e817" title=" " alt="" coords="191,496,332,523"/>
+<area shape="rect" id="node18" href="$ssd1306__tests_8c.html#a18e8e3e0727a3208dc38133d502a4f25" title=" " alt="" coords="193,800,329,827"/>
+<area shape="rect" id="node21" href="$ssd1306__tests_8c.html#a820f47cc9cf09cce8e464778343940e3" title=" " alt="" coords="175,446,348,472"/>
+<area shape="rect" id="node23" href="$ssd1306__tests_8c.html#aea2f960e50f72720707f49348acd7c4e" title=" " alt="" coords="190,598,333,624"/>
+<area shape="rect" id="node27" href="$ssd1306__tests_8c.html#a4e59cd3d115125e4e58c824d5f968755" title=" " alt="" coords="190,750,333,776"/>
+<area shape="rect" id="node29" href="$ssd1306__tests_8c.html#ad77acebff36a21fb4f498020a5a8c28d" title=" " alt="" coords="197,648,326,675"/>
+<area shape="rect" id="node30" href="$ssd1306__tests_8c.html#a49f94502caed43a4af11bae5f40523f5" title=" " alt="" coords="198,294,325,320"/>
+<area shape="rect" id="node31" href="$ssd1306__tests_8c.html#acc507a0d518f99305fbbbea9cdc333ab" title=" " alt="" coords="187,344,336,371"/>
+<area shape="rect" id="node33" href="$ssd1306__tests_8c.html#a97ce6f9cc6ee128672c3dbde3ae0f2cd" title=" " alt="" coords="181,395,342,422"/>
+<area shape="rect" id="node35" href="$ssd1306__tests_8c.html#ab04bcb979a8109ad60b7a71fee4259a3" title=" " alt="" coords="172,699,351,726"/>
+<area shape="rect" id="node4" href="$ssd1306_8c.html#a0de0de5160661b862134dd0ac9023236" title=" " alt="" coords="452,91,564,118"/>
+<area shape="rect" id="node5" href="$ssd1306_8c.html#a64253e858fadc2e9909db0baa31009c6" title="Sets the contrast of the display." alt="" coords="435,142,581,168"/>
+<area shape="rect" id="node6" href="$ssd1306_8c.html#a15046f764dd1127bce472d5924356ba0" title=" " alt="" coords="674,91,842,118"/>
+<area shape="rect" id="node7" href="$ssd1306_8c.html#a63e99c8591f89a39d542c519eac7294f" title="Set Display ON/OFF." alt="" coords="429,40,587,67"/>
+<area shape="rect" id="node8" href="$ssd1306_8c.html#aeca33ad55a12e5a6c23250a01c9e5032" title=" " alt="" coords="428,496,588,523"/>
+<area shape="rect" id="node9" href="$ssd1306_8c.html#a0b365c4271ce6d5551e637de49bdc8a3" title=" " alt="" coords="690,496,826,523"/>
+<area shape="rect" id="node11" href="$ssd1306_8c.html#ae39c61af5bc3a7c19b7512a05a1855a3" title=" " alt="" coords="445,192,571,219"/>
+<area shape="rect" id="node16" href="$ssd1306_8c.html#a868a05ae2ca0b4f968e8dce6c9b181e1" title=" " alt="" coords="399,243,617,270"/>
+<area shape="rect" id="node12" href="$ssd1306_8c.html#ad10175e4bf204edeafc9b7e2465927f1" title=" " alt="" coords="689,243,827,270"/>
+<area shape="rect" id="node13" href="$ssd1306_8c.html#a99529b2a48960312342d3c323aadcec8" title=" " alt="" coords="707,319,809,346"/>
+<area shape="rect" id="node15" href="$ssd1306_8c.html#a9c792eddcc76d1538459f02ef405e6ea" title=" " alt="" coords="665,192,851,219"/>
+<area shape="rect" id="node14" href="$ssd1306_8c.html#ad43cbb77ed1f735535e7251ca47ecf87" title=" " alt="" coords="899,648,1035,675"/>
+<area shape="rect" id="node19" href="$ssd1306_8c.html#adec0d38cc71ffc3262f4278861276d25" title=" " alt="" coords="688,775,828,802"/>
+<area shape="rect" id="node20" href="$ssd1306_8c.html#a5bcfb77d7573fa8afbbed1f5a7292ff3" title=" " alt="" coords="694,826,822,852"/>
+<area shape="rect" id="node22" href="$ssd1306_8c.html#a300c2bd821ca433fbd32000ec6c90406" title=" " alt="" coords="684,446,832,472"/>
+<area shape="rect" id="node24" href="$ssd1306_8c.html#a43b18d938dee01ee07fb8c364ea57996" title=" " alt="" coords="440,699,576,726"/>
+<area shape="rect" id="node25" href="$ssd1306_8c.html#a7c6893df3ab41355adb9e4954cd52239" title=" " alt="" coords="437,648,579,675"/>
+<area shape="rect" id="node26" href="$ssd1306_8c.html#a04d8621d91892bb94c2a119e211927eb" title=" " alt="" coords="690,648,826,675"/>
+<area shape="rect" id="node28" href="$ssd1306_8c.html#aabb10c31ffb533c3b96765581653e6c8" title=" " alt="" coords="431,750,585,776"/>
+<area shape="rect" id="node32" href="$ssd1306_8c.html#adc17a31b0fc997f923c96ac07400e3f8" title=" " alt="" coords="446,344,570,371"/>
+<area shape="rect" id="node34" href="$ssd1306_8c.html#ad830158e99d94a1bd3b93192aff6b5b7" title=" " alt="" coords="425,395,591,422"/>
+</map>

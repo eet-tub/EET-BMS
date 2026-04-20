@@ -1,0 +1,41 @@
+Dual Core Bringup:
+
+for debugging a dual core project you have to adjust some setting in the debug configuration. This are documented in debug documentation
+
+Power Supply:
+ 
+ Recovery Procedure:
+ If the STM hangs due to critical faults during the boot process the Power demand usually drops down to 10-12mA. The Problem
+ can be resolved by keeping the BOOT Pin high during the boot process using a Jumper connecting 3V3 and the STM Side of R41 while
+ cycling the Power Supply. Power demand should increase to 30-40mA and you now can connect an STLink with the Cube Programmer
+ and erase the flash. After this procedure, the Debug Process should work as normal.
+ 
+ printf Style debugging:
+ _write and __io_putchar are overwritten to allow for printf Style debugging and data transmission on
+ both cores. Be aware that an RS485 Bus is bidirectional and data collision may arise when multiple
+ BMS Boards try to access the Bus at the same time
+ 
+ Single Wire UART:
+ Only nice on Paper. RX TX Switch is way to slow so its an PIA. From now on UART RX4 is wired up as the receiving UART
+ This costs ressources but seems like a reliable solution
+ 
+ 
+ Inter Process Communication:
+ Because both Cores run individual Firmware, it is important, to exchange information like cell measurements etc. between those cores.
+ ST suggest to use Shared Memory, prefarrably SRAM4 in the D3 Domain. See AN5617 for further information.
+ 
+ The Inter Process Communication is implemented using a Mailboxes. The .c and .h files are found in the common Inter_Process_Communication Folder
+ The init Routine is called at the start of main.c of the Cortex M7 right after the HAL_Init Call before the Cortex M4 Core is released from
+ Stop Mode. This prevents the M4 Core accessing uninitialized SRAM4 Memory. Shared Data Types are defines in the Shared DataType header.
+ 
+ RS485 Protocol:
+ The RS485 Protocol works with one PC as a host and one or multiple BMS Boards as the Receiver. The Address of the BMS Board is Hardcode
+ in the RS485_Communication.h File. A Request from the Host consists of a request Packet containing at least 4 and a maximum of 256 Bytes:
+ 
+ Byte 1: Address
+ Byte 2: Command
+ Byte 3: NumberofBytes
+ Bytes 4 to N: Payload 
+ Byte N+1: Checksum
+ 
+ 

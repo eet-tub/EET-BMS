@@ -1,0 +1,5 @@
+<map id="amsWakeUp" name="amsWakeUp">
+<area shape="rect" id="node1" title="Send a wakeup signal to the TLE9012 BMS IC." alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node2" href="$_t_l_e___l_l___driver_8h.html#aae96cce2379fccda2d6b845e48087f1d" title=" " alt="" coords="151,5,255,32"/>
+<area shape="rect" id="node3" href="$_t_l_e___l_l___driver_8c.html#af89e18d7e0645da0702116245351b311" title=" " alt="" coords="303,5,377,32"/>
+</map>

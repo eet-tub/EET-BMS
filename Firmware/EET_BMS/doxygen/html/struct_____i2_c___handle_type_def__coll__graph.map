@@ -1,0 +1,11 @@
+<map id="__I2C_HandleTypeDef" name="__I2C_HandleTypeDef">
+<area shape="rect" id="node1" title=" " alt="" coords="693,173,843,199"/>
+<area shape="rect" id="node2" href="$struct_____d_m_a___handle_type_def.html" title="DMA handle Structure definition." alt="" coords="433,122,592,149"/>
+<area shape="rect" id="node3" href="$struct_d_m_a_m_u_x___request_gen_status___type_def.html" title=" " alt="" coords="13,5,208,47"/>
+<area shape="rect" id="node4" href="$struct_d_m_a_m_u_x___request_gen___type_def.html" title=" " alt="" coords="5,71,216,98"/>
+<area shape="rect" id="node5" href="$struct_d_m_a_m_u_x___channel___type_def.html" title=" " alt="" coords="17,122,204,149"/>
+<area shape="rect" id="node6" href="$struct_d_m_a___init_type_def.html" title="DMA Configuration Structure definition." alt="" coords="49,173,172,199"/>
+<area shape="rect" id="node7" href="$struct_d_m_a_m_u_x___channel_status___type_def.html" title=" " alt="" coords="25,224,196,265"/>
+<area shape="rect" id="node8" href="$struct_i2_c___init_type_def.html" title=" " alt="" coords="457,173,569,199"/>
+<area shape="rect" id="node9" href="$struct_i2_c___type_def.html" title="Inter&#45;integrated Circuit Interface." alt="" coords="465,223,560,250"/>
+</map>

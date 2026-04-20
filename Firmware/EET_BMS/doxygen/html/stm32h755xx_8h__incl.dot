@@ -1,0 +1,11 @@
+digraph "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h755xx.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Drivers/CMSIS/Device\l/ST/STM32H7xx/Include\l/stm32h755xx.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="CMSIS STM32H755xx Device Peripheral Access Layer Header File."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="system_stm32h7xx.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$system__stm32h7xx_8h.html",tooltip="CMSIS Cortex-Mx Device System Source File for STM32H7xx devices."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,9 @@
+../Core/Src/RS485_Communication.c:25:6:rs485_communication_init	1
+../Core/Src/RS485_Communication.c:38:6:rs485_communication_loop	7
+../Core/Src/RS485_Communication.c:87:6:rs485_process_package	7
+../Core/Src/RS485_Communication.c:122:6:rs485_command_send_cell_data_as_struct	3
+../Core/Src/RS485_Communication.c:164:6:rs485_command_send_cell_data_as_string	1
+../Core/Src/RS485_Communication.c:201:6:rs485_command_send_bms_limits_as_string	1
+../Core/Src/RS485_Communication.c:233:6:rs485_command_set_bms_limits	2
+../Core/Src/RS485_Communication.c:257:6:rs485_command_bms_enter_sleep_mode	1
+../Core/Src/RS485_Communication.c:271:6:rs485_command_send_state_estimations_as_string	1

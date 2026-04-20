@@ -1,0 +1,5 @@
+<map id="Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_dma.h" name="Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_dma.h">
+<area shape="rect" id="node1" title="Header file of DMA LL module." alt="" coords="5,5,173,61"/>
+<area shape="rect" id="node2" href="$stm32h7xx_8h.html" title="CMSIS STM32H7xx Device Peripheral Access Layer Header File." alt="" coords="41,184,138,211"/>
+<area shape="rect" id="node3" href="$stm32h7xx__ll__dmamux_8h.html" title="Header file of DMAMUX LL module." alt="" coords="67,109,234,136"/>
+</map>

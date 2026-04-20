@@ -1,0 +1,10 @@
+<map id="ssd1306_Init" name="ssd1306_Init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,100,159"/>
+<area shape="rect" id="node2" href="$ssd1306_8c.html#a77620914b6d1247e7515a36c38672391" title=" " alt="" coords="181,5,275,32"/>
+<area shape="rect" id="node3" href="$ssd1306_8c.html#a0de0de5160661b862134dd0ac9023236" title=" " alt="" coords="172,56,284,83"/>
+<area shape="rect" id="node4" href="$ssd1306_8c.html#a64253e858fadc2e9909db0baa31009c6" title="Sets the contrast of the display." alt="" coords="155,107,301,133"/>
+<area shape="rect" id="node5" href="$ssd1306_8c.html#a15046f764dd1127bce472d5924356ba0" title=" " alt="" coords="356,183,524,209"/>
+<area shape="rect" id="node6" href="$ssd1306_8c.html#a63e99c8591f89a39d542c519eac7294f" title="Set Display ON/OFF." alt="" coords="149,208,307,235"/>
+<area shape="rect" id="node7" href="$ssd1306_8c.html#aeca33ad55a12e5a6c23250a01c9e5032" title=" " alt="" coords="148,259,308,285"/>
+<area shape="rect" id="node8" href="$ssd1306_8c.html#a0b365c4271ce6d5551e637de49bdc8a3" title=" " alt="" coords="372,259,508,285"/>
+</map>

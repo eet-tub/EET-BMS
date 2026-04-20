@@ -1,0 +1,16 @@
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:32:9:TLE_LL_Init	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:38:9:writeReg	4
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:114:9:readReg	4
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:164:9:wakeUpSignal	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:174:9:serveWatchdog	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:180:9:configMultiread	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:188:9:multiRead	12
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:295:7:calculateCRC8	4
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:318:7:updateCRC8	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:342:9:calculateCRC3	2
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:366:9:uartWrite	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:373:9:uartRead	1
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:380:19:readWrite	4
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:404:9:awaitRxCplt	4
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:426:6:HAL_UART_TxCpltCallback	3
+../Core/TLE9012_Lib/Src/TLE_LL_Driver.c:440:6:HAL_UART_RxCpltCallback	3
