@@ -1,2 +1,2 @@
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_iwdg.c:172:19:HAL_IWDG_Init	6
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_iwdg.c:259:19:HAL_IWDG_Refresh	1
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_iwdg.c:172:19:HAL_IWDG_Init	6
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_iwdg.c:259:19:HAL_IWDG_Refresh	1

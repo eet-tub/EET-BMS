@@ -44,6 +44,20 @@ This repository is structured in three main subfolders:
 To work on this project it is required to install a toolchain to work with STMs .ioc format. While the VSCode Plugin in combination with CubeMX is getting continuously better, I recommend installing the STM32 Cube IDE for working with the Firmware. Furthermore, to view and edit the schematic and Layout, a KiCAD 7 or newer installation is required. The 3D models for the stand are modeled in Fusion 360 but are included as .step and .stl in this repo, so any 3D CAD program should do the job.
 
 The logging Software for a connected PC is written in Python. Dependencies can be installed via pip using the requirements.txt file. Note that the serial interface used for the main bus between the host and BMS boards is based on RS-485, so an RS-485 to USB converter is required for connecting to the bus.
+# Safety Instructions
+
+## von libre solar kopiert  
+
+- The BMS shall only be used for the intended application.
+- The maximum voltage and current of the connected batteries or loads must not exceed the limits of the BMS.
+- Ensure that the BMS is configured correctly for the used battery type.
+- Install the device considering general best practices for electrical and mechanical installations in accordance to laws in your country.
+- An additional fuse must be installed as close to the battery positive terminal as possible.
+- As sparks can occur during connection of the battery wires, don’t install the BMS close to any flammable materials.
+- The wire cross-section has to be large enough to handle at least the maximum specified current of the BMS.
+- Use insulated tools only.
+- Fix the wires outside the BMS to provide a strain relief and reduce forces on the terminals.
+- Mount the device on a solid, non-inflammable material only. Depending on the ambient conditions and the average current, a heat sink may be required.
 
 ## Hardware Overview
 
@@ -74,6 +88,10 @@ To monitor the current consumption of the STM32 and supporting ICs, it is possib
 To protect the Battery in case the BMS detects an error, a solid-state relay consisting of two PMOS acting as a high-side switch in a common-source configuration is used. To allow current to flow in and out of the Battery, the BMS needs to actively pull the Gates of the PFETs to GND. This is achieved by a logic-level NFET connected to a GPIO on the STM.
 
 In Series with the Solid State Relay is a 5 mOhm shunt resistor with a TSC2012 current amplifier. The Amplifier connects to the TLE9012DQU and is biased by a resistor divider to measure bidirectional currents. The reference is also measured by the TLE9012DQU, so no additional compensation is required by the user.
+
+### Passive Balancing
+
+Currently the BMS provides a passive Balancing of 70 mA.  
 
 ### Tips during assembly
 
@@ -248,5 +266,9 @@ If you start debugging or building the project, sometime errors accrue from an u
 ### Debugging with two cores
 
 By starting debugging with two cores you have most of the time that the debugger stops in `EET_BMS_CM7` or `EET_BMS_CM4`. You have to click on them and resume. 
+
+### GDB Server is not starting
+
+Sometime it helps to restart CubeID or look for an update of the ST-Link 
 
 

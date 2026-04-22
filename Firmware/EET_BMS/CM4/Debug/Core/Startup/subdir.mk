@@ -16,7 +16,7 @@ S_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Startup/%.o: ../Core/Startup/%.s Core/Startup/subdir.mk
-	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc" -I"C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc" -I"C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
 
 clean: clean-Core-2f-Startup
 

@@ -19,8 +19,8 @@ The parameters for the BMS are in following header file defined:
 # Interface RS485 
 
 If multiple BMS systems are used within the same network, every unit must be assigned a **unique ID** to ensure proper communication and avoid addressing conflicts.
-The ID is defined in the source code. To change it, you must edit the following header file: 
-`Firmware\EET_BMS\CM4\Core\Inc\RS485_Communication.h`
+The ID is defined in the source code. The ID starts with `1`and for a second BMS you have to type `2`. To change it, you must edit the following header file: 
+`Firmware\EET_BMS\CM4\Core\Inc\RS485_Communication.h` 
 
 | Settings            | parameter  |
 | ------------------- | ---------- |

@@ -30,14 +30,14 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_conf.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_fonts.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_tests.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/IPPC_Functions.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/Display_Functions/Inc/Display_Functions.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/BMS_State_Estimation/Inc/BMS_State_Estimation.h
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_conf.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_fonts.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_tests.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/IPPC_Functions.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/Display_Functions/Inc/Display_Functions.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/BMS_State_Estimation/Inc/BMS_State_Estimation.h
 ../Core/Inc/main.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -70,11 +70,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_conf.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_fonts.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_tests.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/IPPC_Functions.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/Display_Functions/Inc/Display_Functions.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM7/BMS_State_Estimation/Inc/BMS_State_Estimation.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_conf.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_fonts.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/OLED_Lib/ssd1306/ssd1306_tests.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/IPPC_Functions.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/Display_Functions/Inc/Display_Functions.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM7/BMS_State_Estimation/Inc/BMS_State_Estimation.h:

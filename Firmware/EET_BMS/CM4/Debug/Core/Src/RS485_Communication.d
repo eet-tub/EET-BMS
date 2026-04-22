@@ -31,13 +31,13 @@ Core/Src/RS485_Communication.o: ../Core/Src/RS485_Communication.c \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h \
  ../Core/Inc/BMS_Functions.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Abstraction.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Abstraction.h \
  ../Core/Inc/main.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Makros.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_LL_Driver.h \
- C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/BMS_Config.h
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Makros.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_LL_Driver.h \
+ C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/BMS_Config.h
 ../Core/Inc/RS485_Communication.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -70,10 +70,10 @@ Core/Src/RS485_Communication.o: ../Core/Src/RS485_Communication.c \
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/Common/Inter_Process_Communication/Inc/Shared_DataTypes.h:
 ../Core/Inc/BMS_Functions.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Abstraction.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Abstraction.h:
 ../Core/Inc/main.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Makros.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_LL_Driver.h:
-C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/EET_BMS/EET_BMS_4s/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/BMS_Config.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_Makros.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/TLE_LL_Driver.h:
+C:/Users/pavel/Nextcloud/Arbeit/Projekte/STM32_Projekte/Open_BMS/Open_BMS/Firmware/EET_BMS/CM4/Core/TLE9012_Lib/Inc/BMS_Config.h:

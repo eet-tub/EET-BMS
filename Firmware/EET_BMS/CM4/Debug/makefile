@@ -63,8 +63,8 @@ all: main-build
 main-build: EET_BMS_CM4.elf secondary-outputs
 
 # Tool invocations
-EET_BMS_CM4.elf EET_BMS_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\pavel\Nextcloud\Arbeit\Projekte\STM32_Projekte\EET_BMS\EET_BMS_4s\Firmware\EET_BMS\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "EET_BMS_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\pavel\Nextcloud\Arbeit\Projekte\STM32_Projekte\EET_BMS\EET_BMS_4s\Firmware\EET_BMS\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EET_BMS_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+EET_BMS_CM4.elf EET_BMS_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\pavel\Nextcloud\Arbeit\Projekte\STM32_Projekte\Open_BMS\Open_BMS\Firmware\EET_BMS\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "EET_BMS_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\pavel\Nextcloud\Arbeit\Projekte\STM32_Projekte\Open_BMS\Open_BMS\Firmware\EET_BMS\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EET_BMS_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
