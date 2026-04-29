@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BMS Chip: TLE9012DQU &#8212; EET_BMS 2026 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=fc6fd62b"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Firmware Structure" href="4.%20Firmware%20Overview.html" />
+    <link rel="prev" title="Required Documentation for Manufacturing" href="2.%20BMS%20Assembly.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p>Here are the main parts of the BMS-Hardware described. It includes the BMS-Chip, the Microcontroller and Power supply scheme. For understanding where the components are located the following graph was created:</p>
+<p><img alt="BMS Components Overview" src="../_images/BMS_components_overview.png" /></p>
+<section id="bms-chip-tle9012dqu">
+<h1>BMS Chip: TLE9012DQU<a class="headerlink" href="#bms-chip-tle9012dqu" title="Link to this heading">¶</a></h1>
+<p>The TLE9012DQU is the main BMS IC for the BMS. Its task is to provide analog-to-digital conversion of cell voltages, temperatures, and current, as well as implement part of the necessary circuitry for passive cell balancing.</p>
+<p>Documentation for this IC is scattered across the <a class="reference external" href="https://www.infineon.com/dgdl/Infineon-TLE9012DQU-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c3d27c75737">datasheet</a> and the <a class="reference external" href="https://www.infineon.com/dgdl/Infineon-Infineon-TLE9012DQU_TLE9015DQU-UM-v01_00-EN-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c4f8750574b&amp;amp;da=t">user manual</a>. The datasheet provides mainly information about the electrical characteristics of the chip, while the user manual contains the register map, a reference schematic, some additional information, and a few example commands. If there is some information missing in both the user manual and the datasheet, it is usually a good idea to check the datasheet of the rather similar predecessor, <a class="reference external" href="https://www.mouser.com/datasheet/2/196/Infineon_TLE9012AQU_DataSheet_v01_10_EN-1890780.pdf">TLE9012AQU</a>.</p>
+<p>The PCB Schematic mainly follows the reference design outlined in the user manual, with the main difference being the reduction of the number of connected cells from 12 to just 4. Unused channels are connected to the GND potential. In addition, the single-wire UART interface is used instead of the ISO-UART, which is used in the reference design. To allow for bidirectional current measurements, the TMP3 and TMP4 channels are used with the BAVM function of the TLE9012. The BAVM function allows for repurposing the 16-bit ADC used for independently measuring the sum voltage of all cells as a bipolar ADC on inputs TMP3 and TMP4.</p>
+</section>
+<section id="microcontroller-stm32h755zi">
+<h1>Microcontroller: STM32H755ZI<a class="headerlink" href="#microcontroller-stm32h755zi" title="Link to this heading">¶</a></h1>
+<p>To ensure enough computation power to test modern state estimation techniques, a dual-core STM32 microcontroller is used, offering an ARM Cortex M4 and M7 core, with 1Mbyte of Flash per Core as well as 1Mbyte of SRAM.</p>
+<p>The schematic of the microcontroller section is a bare-bones implementation of the STM32H755 as described in the datasheet. The H755 offers the possibility to increase efficiency by using some external components to form a switching mode regulator. Due to reasons of simplicity, this is not implemented in this design and the internal linear regulator is used to supply the core voltage.</p>
+<p>In terms of communication interfaces, three UARTs of the STM32 are in use, UART Peripheral 1 is used as an isolated UART, which can be connected to a UART-USB connector. For communication between a host and multiple BMS boards, UART3 is used in combination with an isolated RS485 transceiver, which implements a custom serial protocol. The third UART is used in single wire mode to communicate with the TLE9012DQU (see the known quirks and errors section for further information).</p>
+</section>
+<section id="power-supply-scheme">
+<h1>Power Supply Scheme<a class="headerlink" href="#power-supply-scheme" title="Link to this heading">¶</a></h1>
+<p>While the TLE9012DQU supplies itself from the Battery, the STM32 would overload the internal regulator of the TLE, so an independent power source is necessary. The supply is therefore ensured by using an isolated DC/DC 5V to 5V converter with the primary side supplied by the Host. The DC/DC itself is unregulated and has an ensured output voltage of at least 4.5V. Therefore, two independent 3V3 regulators are used to supply digital and analog ICs with 3V3.</p>
+<p>To monitor the current consumption of the STM32 and supporting ICs, it is possible to optionally utilise a shunt and a current sense amplifier connected to the ADC peripheral of the STM.</p>
+</section>
+<section id="current-measurement-and-solid-state-relay">
+<h1>Current Measurement and Solid State Relay<a class="headerlink" href="#current-measurement-and-solid-state-relay" title="Link to this heading">¶</a></h1>
+<p>To protect the Battery in case the BMS detects an error, a solid-state relay consisting of two PMOS acting as a high-side switch in a common-source configuration is used. To allow current to flow in and out of the Battery, the BMS needs to actively pull the Gates of the PFETs to GND. This is achieved by a logic-level NFET connected to a GPIO on the STM.</p>
+<p>In Series with the Solid State Relay is a 5 m Ohm shunt resistor with a TSC2012 current amplifier. The Amplifier connects to the TLE9012DQU and is biased by a resistor divider to measure bidirectional currents. The reference is also measured by the TLE9012DQU, so no additional compensation is required by the user.</p>
+</section>
+<section id="passive-balancing">
+<h1>Passive Balancing<a class="headerlink" href="#passive-balancing" title="Link to this heading">¶</a></h1>
+<p>Currently the BMS provides a passive Balancing of 70 mA.</p>
+</section>
+<section id="tips-during-assembly">
+<h1>Tips during assembly<a class="headerlink" href="#tips-during-assembly" title="Link to this heading">¶</a></h1>
+<p>Assembly is rather straightforward, but I suggest using a stencil as well as lead-free solder paste. Make sure to keep the amount of excessive solder paste as low as possible to prevent solder bridges under the Pins of the STM and TLE. While placing the components, make sure that components marked as DNP (do not populate) are not placed on the PCB, which may lead to unexpected behavior.</p>
+<p>After soldering the SMD components, it is highly recommended to check that a debug connection to the STM can be established using the ST-Link and a lab-bench power supply.</p>
+</section>
+<section id="pinout-table">
+<h1>Pinout Table<a class="headerlink" href="#pinout-table" title="Link to this heading">¶</a></h1>
+<p>Pinout for J2 (Battery Connector):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>Bat+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>Cell_4+</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>Cell_3+</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>Cell_2+</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Pin_5</p></td>
+<td><p>Cell_1+</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Pin_6</p></td>
+<td><p>Cell_1-</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Pin_7</p></td>
+<td><p>Bat-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J4 (TMP1):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>NTC+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>NTC-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J3 (TMP2):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>NTC+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>NTC-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J1 (TMP3):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>NTC+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>NTC-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J9 (CPower Supply):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>5V</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J6 (RS485):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>RS485-VCC (3.3-5V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>B</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>RS485-GND</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J8 (UART_Shell):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>UART-GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>TX</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>RX</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>UART-VCC (3.3-5V)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J10 (SW_Debug_Connector):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>+3V3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>SWCLK</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>SWDIO</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Pin_5</p></td>
+<td><p>NRST</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Pin_6</p></td>
+<td><p>SWO</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">EET_BMS</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.%20Getting%20started.html">EET_BMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.%20Getting%20started.html#known-quirks-and-errors">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.%20BMS%20Assembly.html">Required Documentation for Manufacturing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BMS Chip: TLE9012DQU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#microcontroller-stm32h755zi">Microcontroller: STM32H755ZI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#power-supply-scheme">Power Supply Scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#current-measurement-and-solid-state-relay">Current Measurement and Solid State Relay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#passive-balancing">Passive Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tips-during-assembly">Tips during assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#pinout-table">Pinout Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Firmware%20Overview.html">Firmware Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Firmware%20Overview.html#inter-processor-communciation">Inter Processor Communciation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Firmware%20Overview.html#serial-protocol">Serial Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Firmware%20Overview.html#extending-the-firmware">Extending the Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.%20Firmware%20Overview.html#power-source">Power Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.%20Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.%20Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Debugging Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html#launch-group">Launch Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.%20Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Flashing the BMS software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.%20Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html#starting-a-charge-and-discharge-test">Starting a charge and discharge test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html#license-hardware">License Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety Instructions</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="2.%20BMS%20Assembly.html" title="previous chapter">Required Documentation for Manufacturing</a></li>
+      <li>Next: <a href="4.%20Firmware%20Overview.html" title="next chapter">Firmware Structure</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Pavel Aleinikau.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/docs/3. Hardware.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

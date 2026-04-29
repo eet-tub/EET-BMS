@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EET_BMS documentation &#8212; EET_BMS 2026 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=fc6fd62b"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EET_BMS" href="docs/1.%20Getting%20started.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="eet-bms-documentation">
+<h1>EET_BMS documentation<a class="headerlink" href="#eet-bms-documentation" title="Link to this heading">¶</a></h1>
+<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
+documentation for details.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/1.%20Getting%20started.html">EET_BMS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#repo-organization">Repo organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#toolchains">Toolchains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/1.%20Getting%20started.html#known-quirks-and-errors">Known quirks and errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#single-wire-uart-on-stm32-is-too-slow">Single wire UART on STM32 is too slow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#stm32-doesn-t-connect-to-st-link-after-firmware-update">STM32 doesn’t connect to ST-Link after firmware update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#display-was-hotplugged-and-is-not-powering-on-anymore">Display was hotplugged and is not powering on anymore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#undefined-reference-to-hal-init-error">undefined reference to <code class="docutils literal notranslate"><span class="pre">HAL_Init</span></code> error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#debugging-with-two-cores">Debugging with two cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/1.%20Getting%20started.html#gdb-server-is-not-starting">GDB Server is not starting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/2.%20BMS%20Assembly.html">Required Documentation for Manufacturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html">BMS Chip: TLE9012DQU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#microcontroller-stm32h755zi">Microcontroller: STM32H755ZI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#power-supply-scheme">Power Supply Scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#current-measurement-and-solid-state-relay">Current Measurement and Solid State Relay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#passive-balancing">Passive Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#tips-during-assembly">Tips during assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#pinout-table">Pinout Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html">Firmware Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#inter-processor-communciation">Inter Processor Communciation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#serial-protocol">Serial Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#extending-the-firmware">Extending the Firmware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#state-estimation">State estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#balancing">Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#communication-protocol">Communication Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#power-source">Power Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#recovery-procedure">Recovery Procedure:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/5.%20Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/5.%20Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Debugging Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html#cm4">CM4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html#cm7">CM7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html#launch-group">Launch Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/7.%20Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Flashing the BMS software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/7.%20Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html#starting-a-charge-and-discharge-test">Starting a charge and discharge test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/8.%20Logging%20with%20Python.html">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/License.html#license-hardware">License Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Safety.html">Safety Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Open_BMS Documentation</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">EET_BMS</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/1.%20Getting%20started.html">EET_BMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/1.%20Getting%20started.html#known-quirks-and-errors">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/2.%20BMS%20Assembly.html">Required Documentation for Manufacturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html">BMS Chip: TLE9012DQU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#microcontroller-stm32h755zi">Microcontroller: STM32H755ZI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#power-supply-scheme">Power Supply Scheme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#current-measurement-and-solid-state-relay">Current Measurement and Solid State Relay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#passive-balancing">Passive Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#tips-during-assembly">Tips during assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/3.%20Hardware.html#pinout-table">Pinout Table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html">Firmware Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#inter-processor-communciation">Inter Processor Communciation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#serial-protocol">Serial Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#extending-the-firmware">Extending the Firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/4.%20Firmware%20Overview.html#power-source">Power Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/5.%20Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/5.%20Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Debugging Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/6.%20Configurations%20for%20the%20Debugger%20in%20CubeIDE.html#launch-group">Launch Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/7.%20Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Flashing the BMS software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/7.%20Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html#starting-a-charge-and-discharge-test">Starting a charge and discharge test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/8.%20Logging%20with%20Python.html">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/License.html#license-hardware">License Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/Safety.html">Safety Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Open_BMS Documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="docs/1.%20Getting%20started.html" title="next chapter">EET_BMS</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Pavel Aleinikau.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -33,15 +33,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_macro  0003b86a  00000000  00000000  00029975  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_line   0001738b  00000000  00000000  000651df  2**0
+ 15 .debug_line   00017387  00000000  00000000  000651df  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_str    0017eaa3  00000000  00000000  0007c56a  2**0
+ 16 .debug_str    0017eaa3  00000000  00000000  0007c566  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .comment      00000043  00000000  00000000  001fb00d  2**0
+ 17 .comment      00000043  00000000  00000000  001fb009  2**0
                   CONTENTS, READONLY
- 18 .debug_frame  00004d88  00000000  00000000  001fb050  2**2
+ 18 .debug_frame  00004d88  00000000  00000000  001fb04c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_line_str 0000008d  00000000  00000000  001ffdd8  2**0
+ 19 .debug_line_str 0000008d  00000000  00000000  001ffdd4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2786,7 +2786,6 @@ void rs485_command_send_cell_data_as_string(uint8_t payloadlen, uint8_t* payload
  8101aa2:	4b5a      	ldr	r3, [pc, #360]	@ (8101c0c <rs485_command_send_cell_data_as_string+0x184>)
  8101aa4:	781b      	ldrb	r3, [r3, #0]
  8101aa6:	4698      	mov	r8, r3
-	//txlen = sprintf((char*) &tx_buffer[3], "%d,%d,%lu,%lu,%lu,%lu,%ld,%lu,%f\n",
 		RS485_ID,
 		rollingcounter,
 		(uint32_t)((float) rs485_module->cellVoltages[0]*50000)/65536,
@@ -5026,7 +5025,7 @@ uint8 initAMS(UART_HandleTypeDef* huart, uint8 numofcells, uint8 numofaux)
  8102800:	2003      	movs	r0, #3
  8102802:	f000 fa31 	bl	8102c68 <amsConfigTempSense>
 	amsConfigOverVoltage(DEFAULT_OV);
- 8102806:	f64f 7033 	movw	r0, #65331	@ 0xff33
+ 8102806:	f64f 701e 	movw	r0, #65310	@ 0xff1e
  810280a:	f000 f995 	bl	8102b38 <amsConfigOverVoltage>
 	amsConfigUnderVoltage(DEFAULT_UV);
  810280e:	f44f 7000 	mov.w	r0, #512	@ 0x200

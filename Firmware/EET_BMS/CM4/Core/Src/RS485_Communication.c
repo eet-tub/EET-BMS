@@ -170,7 +170,6 @@ void rs485_command_send_cell_data_as_string(uint8_t payloadlen, uint8_t* payload
 	tx_buffer[1] = GET_MODULE_INFO_AS_STRING;
 
 	txlen = sprintf((char*) &tx_buffer[3], "%d,%d,%lu,%lu,%lu,%lu,%ld,%lu,%lu,%lu,%lu,%f\n",
-	//txlen = sprintf((char*) &tx_buffer[3], "%d,%d,%lu,%lu,%lu,%lu,%ld,%lu,%f\n",
 		RS485_ID,
 		rollingcounter,
 		(uint32_t)((float) rs485_module->cellVoltages[0]*50000)/65536,
