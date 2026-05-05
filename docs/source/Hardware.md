@@ -1,3 +1,4 @@
+# Hardware
 Here are the main parts of the BMS-Hardware described. It includes the BMS-Chip, the Microcontroller and Power supply scheme. For understanding where the components are located the following graph was created:
 
 ![BMS Components Overview](doc_res/BMS_components_overview.png)

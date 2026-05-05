@@ -1,3 +1,4 @@
+# Firmware Overview
 As a result of the dual core nature of the STM32H755, the software consists of two separate sub-projects which share a common .ioc file for code generation and peripheral initialization, as well as a folder named Common, containing files present in both sub-projects. Both cores operate independently by default except for a synchronization event at the start. Data between Cores is shared by a mailbox system, further described in the Inter-Processor Communication section.
 
 To ensure the basic BMS functions, mainly monitoring and communication of log data to the host PC, these functions are running on the Cortex M4 core. The M4 core sends this data to the Cortex M7, which runs the State Estimation. This decoupling of monitoring and state estimation functions allows for testing new algorithms in real time while not compromising the monitoring function in case new state estimation algorithms are facing bugs or too high computational complexity.
@@ -41,13 +42,13 @@ The Bus ID of the device is hardcoded in the Macro RS485_ID found in RS485_Commu
 
 Currently implemented commands are GET_MODULE_INFO which returns module info in a binary format as well as GET_MODULE_INFO_AS_STRING which returns the same data in a ascii format which is human readable at the expanse of taking more bus bandwidth.
 
-# Extending the Firmware
+## Extending the Firmware
 
 The Firmware in this repository builds a foundation to experiment with more complex BMS algorithms. Therefore, it tries to provide easy expansion/callbacks for the following use cases:
 
-## State estimation
+## State Estimation
 
-The bmsStateEstimationCallback is called every time there are updated measurements from the cortex M4 and returns new estimations about the state of each cell. State estimation algorithms shall therefore be added to this function.
+The `bmsStateEstimationCallback` is called every time there are updated measurements from the cortex M4 and returns new estimations about the state of each cell. State estimation algorithms shall therefore be added to this function.
 
 ## Balancing
 

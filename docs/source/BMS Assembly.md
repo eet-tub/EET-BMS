@@ -1,9 +1,10 @@
+# BMS Assembly
 There are several ways to approach the physical construction of the BMS hardware, depending on your technical equipment and budget. You can choose between the following assembly variants:
 
 - **Full Outsourcing:** You can order both the PCB (Printed Circuit Board) manufacturing and the component assembly (PCBA) from a professional service provider.
 - **Partial Outsourcing (DIY Assembly):** You can order only the bare PCB from a manufacturer and perform the component assembly yourself.
 
-### Required Documentation for Manufacturing
+## Required Documentation for Manufacturing
 
 To place an order with a manufacturer or to prepare for self-assembly, specific files are required. These are provided in the project folder:
 
