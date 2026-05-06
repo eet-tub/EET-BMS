@@ -1,0 +1,44 @@
+name: documentation
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          pip install sphinx sphinx_rtd_theme myst_parser
+
+      - name: Sphinx Build
+        run: |
+          # Wir bauen aus doc/source (wo conf.py liegt) in den Ordner 'public'
+          # Falls du die index.md aus doc/ auch in der Doku haben willst, 
+          # sollte diese idealerweise auch in doc/source liegen.
+          sphinx-build doc/source public
+          
+          # Verhindert, dass GitHub Pages Jekyll nutzt (wichtig für CSS/Unterstriche)
+          touch public/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
