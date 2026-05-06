@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Getting started.md",
+                "file": "Firmware Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Getting started"
+              "title": "Firmware Overview"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Getting started.md",
+                "file": "Firmware Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Getting started"
+              "title": "Backlinks for Firmware Overview"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Getting started.md",
+                "file": "Firmware Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Getting started"
+              "title": "Outgoing links from Firmware Overview"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Getting started.md",
+                "file": "Firmware Overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Getting started"
+              "title": "Outline of Firmware Overview"
             }
           }
         ]
@@ -200,18 +200,18 @@
   },
   "active": "102fdc3bfd799868",
   "lastOpenFiles": [
+    "Configurations for the Debugger in CubeIDE.md",
+    "Configuration for the BMS.md",
+    "BMS Assembly.md",
+    "Safety.md",
+    "Getting started.md",
     "Introduction.md",
     "README.md",
-    "Getting started.md",
-    "BMS Assembly.md",
-    "Configuration for the BMS.md",
-    "Configurations for the Debugger in CubeIDE.md",
     "Firmware Overview.md",
     "Hardware.md",
     "Initialising and testing the BMS for the first time.md",
     "Known quirks and errors.md",
     "Logging with Python.md",
-    "Safety.md",
     "Open BMS/Welcome.md",
     "Open BMS",
     "Known Quirks and Errors.md"

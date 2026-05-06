@@ -1,5 +1,4 @@
-# Safety Instructions
-
+# Safety
 
 - configure the BMS settings exactly as the battery type allows
 - the maximum voltage and current must not exceed 
