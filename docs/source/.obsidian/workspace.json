@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Firmware Overview.md",
+                "file": "Initialising and testing the BMS for the first time.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Firmware Overview"
+              "title": "Initialising and testing the BMS for the first time"
             }
           }
         ],
@@ -200,18 +200,19 @@
   },
   "active": "102fdc3bfd799868",
   "lastOpenFiles": [
-    "Configurations for the Debugger in CubeIDE.md",
-    "Configuration for the BMS.md",
-    "BMS Assembly.md",
-    "Safety.md",
-    "Getting started.md",
-    "Introduction.md",
-    "README.md",
-    "Firmware Overview.md",
-    "Hardware.md",
-    "Initialising and testing the BMS for the first time.md",
-    "Known quirks and errors.md",
     "Logging with Python.md",
+    "Known quirks and errors.md",
+    "Initialising and testing the BMS for the first time.md",
+    "BMS Assembly.md",
+    "Configuration for the BMS.md",
+    "Configurations for the Debugger in CubeIDE.md",
+    "Getting started.md",
+    "doc_res/BMS_connections.png",
+    "Introduction.md",
+    "Hardware.md",
+    "Firmware Overview.md",
+    "Safety.md",
+    "README.md",
     "Open BMS/Welcome.md",
     "Open BMS",
     "Known Quirks and Errors.md"

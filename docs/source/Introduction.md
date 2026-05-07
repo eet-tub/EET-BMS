@@ -2,10 +2,6 @@
 
 The EET BMS is an open source battery management system for research and education purposes. It is possible to test new algorithms for state estimation and extend the hardware for more cells. Everything which is needed to rebuild the BMS can be found in this repository. 
 
-## Reading the documentation
-
-We created the documentation in Obsidian. The documentation can also be read in git or in visual studio, but the linking of the screenshot does not work in both of the programs. To see the documentation with the pictures you have to use obsidian or look at the folder `documentation_res`. Another option is t 
-
 ## Tools and programs 
 
 To use the BMS there are different free programs needed. 

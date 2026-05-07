@@ -20,7 +20,7 @@ For connecting the BMS with the cells, external power source, RS585 and the Load
 6. Ensure power is supplied via a 5 V power supply
 	- If the cycler is connected only afterwards, this may lead to measurement errors for the current, because in the first moment the current is calibrated 
 7. the Display should show the voltage for the cells and
-8. Starting the logging (see at [[Logging with Python]]) on the Computer/Laptop 
+8. Starting the logging (see at {ref}`logging`) on the Computer/Laptop 
 9. Start test
 
 ![BMS connections](doc_res/BMS_connections.png)

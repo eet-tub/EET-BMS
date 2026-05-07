@@ -1,3 +1,4 @@
+(logging)=
 # Logging with Python
 
 To log the measured values from the Battery Management System (BMS), you need to have Python installed. After installing Python, you can use the script located at `Logging_script/main`. First, install the required packages listed in the script’s initial lines, then start the script.
