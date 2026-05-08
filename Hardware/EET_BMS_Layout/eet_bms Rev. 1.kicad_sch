@@ -1,288 +1,704 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid 06b1545d-931e-4b77-bb00-ee7a1c7d202f)
-
-  (paper "A4")
-
-  (title_block
-    (title "MG Farm 4S BMS")
-    (date "2025-01-07")
-    (rev "Rev 1")
-    (company "TU Berlin EET")
-    (comment 1 "Author: Maximilian Mönikes")
-    (comment 2 "Author2: Nicolas Karl Kircher")
-  )
-
-  (lib_symbols
-    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-      (property "Reference" "H" (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "MountingHole" (at 0 3.175 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "mounting hole" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Mounting Hole without connection" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "MountingHole*" (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "MountingHole_0_1"
-        (circle (center 0 0) (radius 1.27)
-          (stroke (width 1.27) (type default))
-          (fill (type none))
-        )
-      )
-    )
-  )
-
-
-  (wire (pts (xy 191.77 96.52) (xy 181.61 96.52))
-    (stroke (width 0) (type default))
-    (uuid 2872ffdc-34d5-4e23-a55e-c4e6acf23e16)
-  )
-  (wire (pts (xy 148.59 91.44) (xy 191.77 91.44))
-    (stroke (width 0) (type default))
-    (uuid 452e72a6-cdb5-406b-a355-4120618e1403)
-  )
-  (wire (pts (xy 107.95 107.95) (xy 107.95 96.52))
-    (stroke (width 0) (type default))
-    (uuid 50217018-697e-4a5e-bbb0-e84ee7bee48a)
-  )
-  (wire (pts (xy 101.6 83.82) (xy 114.3 83.82))
-    (stroke (width 0) (type default))
-    (uuid 73cc61dd-1822-4f24-bdd6-ec35c138a319)
-  )
-  (wire (pts (xy 148.59 88.9) (xy 191.77 88.9))
-    (stroke (width 0) (type default))
-    (uuid 7fdbc4af-0bd9-4caa-99ee-9b9a042c2404)
-  )
-  (wire (pts (xy 181.61 96.52) (xy 181.61 107.95))
-    (stroke (width 0) (type default))
-    (uuid 9f66727d-bd97-46f1-b3bb-8e5455ac7cca)
-  )
-  (wire (pts (xy 107.95 96.52) (xy 101.6 96.52))
-    (stroke (width 0) (type default))
-    (uuid a6ab835f-9b24-4bc1-a94d-b3c262e69602)
-  )
-  (wire (pts (xy 148.59 82.55) (xy 191.77 82.55))
-    (stroke (width 0) (type default))
-    (uuid b09a61c9-8227-400c-b830-9179bc5b5a6c)
-  )
-  (wire (pts (xy 101.6 87.63) (xy 114.3 87.63))
-    (stroke (width 0) (type default))
-    (uuid b8b7e5c3-7729-4228-bdcf-c12ebf833684)
-  )
-  (wire (pts (xy 181.61 107.95) (xy 107.95 107.95))
-    (stroke (width 0) (type default))
-    (uuid dcf808f1-b0db-47fb-a054-132fa3e6a1c9)
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 53.975 169.545 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 1133f845-62d3-41cf-b81a-b592d9633e6b)
-    (property "Reference" "H1" (at 56.515 168.91 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 56.515 171.45 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 53.975 169.545 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 53.975 169.545 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
-          (reference "H1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 74.295 169.545 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 257d242b-fb8c-4a39-912a-ea878a013936)
-    (property "Reference" "H2" (at 76.835 168.91 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 76.835 171.45 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 74.295 169.545 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 74.295 169.545 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
-          (reference "H2") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 53.975 177.165 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 7c14a4f8-9198-4194-ae0d-e98515209859)
-    (property "Reference" "H3" (at 56.515 176.53 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 56.515 179.07 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 53.975 177.165 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 53.975 177.165 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
-          (reference "H3") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 74.295 177.165 0) (unit 1)
-    (in_bom no) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid bbdcbc60-dd94-44c0-aed5-472c58254f00)
-    (property "Reference" "H4" (at 76.835 176.53 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (at 76.835 179.07 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 74.295 177.165 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 74.295 177.165 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
-          (reference "H4") (unit 1)
-        )
-      )
-    )
-  )
-
-  (sheet (at 191.77 73.66) (size 40.64 25.4) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 79e9d87b-cf44-4e23-8da6-ab89089c281d)
-    (property "Sheetname" "STM_MCU" (at 191.77 72.9484 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "STM_MCU.kicad_sch" (at 191.77 99.6446 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "Error" input (at 191.77 88.9 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid a71cca43-0c0b-4892-85ba-b9a618844828)
-    )
-    (pin "UART" bidirectional (at 191.77 91.44 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid ee3c7ee9-7d9f-4119-840a-0a2ac9f00189)
-    )
-    (pin "VIO" output (at 191.77 82.55 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 6e9ae1be-c79b-4591-95cb-ff11d1d0a992)
-    )
-    (pin "BAT_Relay" output (at 191.77 96.52 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 0a0e1a82-510c-4ef7-8e38-b68d418ac516)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f" (page "3"))
-      )
-    )
-  )
-
-  (sheet (at 114.3 73.66) (size 34.29 25.4) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 94ee3778-4487-453c-9b46-c3981272addc)
-    (property "Sheetname" "BMS_Frontend" (at 114.3 72.9484 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "Frontend.kicad_sch" (at 114.3 99.6446 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "Error" output (at 148.59 88.9 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 57be3ce1-5140-4048-871e-7e15e7666aef)
-    )
-    (pin "UART" bidirectional (at 148.59 91.44 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 3e6dacb5-4187-4c83-b182-54202e506709)
-    )
-    (pin "VIO" input (at 148.59 82.55 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid f795670d-1ca1-4eb0-b5ee-c9174a0b4646)
-    )
-    (pin "Current_Sense_Reference" input (at 114.3 87.63 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid e7542247-b431-4bdb-9f8f-59753e6d40e0)
-    )
-    (pin "Bat_Current_Sense" input (at 114.3 83.82 180)
-      (effects (font (size 1.27 1.27)) (justify left))
-      (uuid 7aac8b38-3e18-4906-b64b-a3189d9c0bb2)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f" (page "2"))
-      )
-    )
-  )
-
-  (sheet (at 74.93 80.01) (size 26.67 19.05) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid a8b50d73-6678-4daa-914b-2bd372fc950b)
-    (property "Sheetname" "Current Sense Amplifier" (at 74.93 79.2984 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "1S_ADC.kicad_sch" (at 74.93 99.6446 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (pin "Bat_Current_Sense" output (at 101.6 83.82 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 4b3c7340-b321-4041-815a-28b5b2ba81f4)
-    )
-    (pin "Current_Sense_Reference" output (at 101.6 87.63 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid f0d35246-b549-4a28-8424-07faa7d56375)
-    )
-    (pin "BAT_Relay" input (at 101.6 96.52 0)
-      (effects (font (size 1.27 1.27)) (justify right))
-      (uuid 1e432cde-4691-47ac-b7c3-16de5dff4334)
-    )
-    (instances
-      (project "mg_farm_bms Rev. 1"
-        (path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f" (page "4"))
-      )
-    )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
-  )
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "06b1545d-931e-4b77-bb00-ee7a1c7d202f")
+	(paper "A4")
+	(title_block
+		(title "MG Farm 4S BMS")
+		(date "2025-01-07")
+		(rev "Rev 1")
+		(company "TU Berlin EET")
+		(comment 1 "Author: Maximilian Mönikes")
+		(comment 2 "Author2: Nicolas Karl Kircher")
+		(comment 3 "Author3: Pavel Aleinikau")
+	)
+	(lib_symbols
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(wire
+		(pts
+			(xy 191.77 96.52) (xy 181.61 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2872ffdc-34d5-4e23-a55e-c4e6acf23e16")
+	)
+	(wire
+		(pts
+			(xy 148.59 91.44) (xy 191.77 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "452e72a6-cdb5-406b-a355-4120618e1403")
+	)
+	(wire
+		(pts
+			(xy 107.95 107.95) (xy 107.95 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50217018-697e-4a5e-bbb0-e84ee7bee48a")
+	)
+	(wire
+		(pts
+			(xy 101.6 83.82) (xy 114.3 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73cc61dd-1822-4f24-bdd6-ec35c138a319")
+	)
+	(wire
+		(pts
+			(xy 148.59 88.9) (xy 191.77 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fdbc4af-0bd9-4caa-99ee-9b9a042c2404")
+	)
+	(wire
+		(pts
+			(xy 181.61 96.52) (xy 181.61 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f66727d-bd97-46f1-b3bb-8e5455ac7cca")
+	)
+	(wire
+		(pts
+			(xy 107.95 96.52) (xy 101.6 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6ab835f-9b24-4bc1-a94d-b3c262e69602")
+	)
+	(wire
+		(pts
+			(xy 148.59 82.55) (xy 191.77 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b09a61c9-8227-400c-b830-9179bc5b5a6c")
+	)
+	(wire
+		(pts
+			(xy 101.6 87.63) (xy 114.3 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8b7e5c3-7729-4228-bdcf-c12ebf833684")
+	)
+	(wire
+		(pts
+			(xy 181.61 107.95) (xy 107.95 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcf808f1-b0db-47fb-a054-132fa3e6a1c9")
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 53.975 169.545 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1133f845-62d3-41cf-b81a-b592d9633e6b")
+		(property "Reference" "H1"
+			(at 56.515 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 56.515 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 53.975 169.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 53.975 169.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.975 169.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "mg_farm_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 74.295 169.545 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "257d242b-fb8c-4a39-912a-ea878a013936")
+		(property "Reference" "H2"
+			(at 76.835 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 76.835 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 74.295 169.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.295 169.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 74.295 169.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "mg_farm_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 53.975 177.165 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7c14a4f8-9198-4194-ae0d-e98515209859")
+		(property "Reference" "H3"
+			(at 56.515 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 56.515 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 53.975 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 53.975 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 53.975 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "mg_farm_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 74.295 177.165 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bbdcbc60-dd94-44c0-aed5-472c58254f00")
+		(property "Reference" "H4"
+			(at 76.835 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 76.835 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 74.295 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.295 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 74.295 177.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "mg_farm_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 191.77 73.66)
+		(size 40.64 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "79e9d87b-cf44-4e23-8da6-ab89089c281d")
+		(property "Sheetname" "STM_MCU"
+			(at 191.77 72.9484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "STM_MCU.kicad_sch"
+			(at 191.77 99.6446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Error" input
+			(at 191.77 88.9 180)
+			(uuid "a71cca43-0c0b-4892-85ba-b9a618844828")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "UART" bidirectional
+			(at 191.77 91.44 180)
+			(uuid "ee3c7ee9-7d9f-4119-840a-0a2ac9f00189")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VIO" output
+			(at 191.77 82.55 180)
+			(uuid "6e9ae1be-c79b-4591-95cb-ff11d1d0a992")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BAT_Relay" output
+			(at 191.77 96.52 180)
+			(uuid "0a0e1a82-510c-4ef7-8e38-b68d418ac516")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "eet_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 114.3 73.66)
+		(size 34.29 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "94ee3778-4487-453c-9b46-c3981272addc")
+		(property "Sheetname" "BMS_Frontend"
+			(at 114.3 72.9484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Frontend.kicad_sch"
+			(at 114.3 99.6446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Error" output
+			(at 148.59 88.9 0)
+			(uuid "57be3ce1-5140-4048-871e-7e15e7666aef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "UART" bidirectional
+			(at 148.59 91.44 0)
+			(uuid "3e6dacb5-4187-4c83-b182-54202e506709")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VIO" input
+			(at 148.59 82.55 0)
+			(uuid "f795670d-1ca1-4eb0-b5ee-c9174a0b4646")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Current_Sense_Reference" input
+			(at 114.3 87.63 180)
+			(uuid "e7542247-b431-4bdb-9f8f-59753e6d40e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Bat_Current_Sense" input
+			(at 114.3 83.82 180)
+			(uuid "7aac8b38-3e18-4906-b64b-a3189d9c0bb2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "eet_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 74.93 80.01)
+		(size 26.67 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a8b50d73-6678-4daa-914b-2bd372fc950b")
+		(property "Sheetname" "Bidirectional Switch and Current Sense Amplifier"
+			(at 63.5 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "1S_ADC.kicad_sch"
+			(at 74.93 99.6446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Bat_Current_Sense" output
+			(at 101.6 83.82 0)
+			(uuid "4b3c7340-b321-4041-815a-28b5b2ba81f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Current_Sense_Reference" output
+			(at 101.6 87.63 0)
+			(uuid "f0d35246-b549-4a28-8424-07faa7d56375")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BAT_Relay" input
+			(at 101.6 96.52 0)
+			(uuid "1e432cde-4691-47ac-b7c3-16de5dff4334")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "eet_bms Rev. 1"
+				(path "/06b1545d-931e-4b77-bb00-ee7a1c7d202f"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )

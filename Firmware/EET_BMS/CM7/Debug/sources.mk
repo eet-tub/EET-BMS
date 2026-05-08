@@ -28,6 +28,6 @@ Common/Src \
 Core/Src \
 Core/Startup \
 Display_Functions/Src \
-Drivers/STM32H7xx_HAL_Driver \
+Drivers/STM32H7xx_HAL_Driver/Src \
 OLED_Lib/ssd1306 \
 

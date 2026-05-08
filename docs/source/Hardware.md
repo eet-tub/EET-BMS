@@ -2,13 +2,57 @@
 Here are the main parts of the BMS-Hardware described. It includes the BMS-Chip, the Microcontroller and Power supply scheme. For understanding where the components are located the following graph was created:
 
 ![BMS Components Overview](doc_res/BMS_components_overview.png)
-## BMS Chip: TLE9012DQU
 
-The TLE9012DQU is the main BMS IC for the BMS. Its task is to provide analog-to-digital conversion of cell voltages, temperatures, and current, as well as implement part of the necessary circuitry for passive cell balancing.
+## Hardware files
+
+The hardware design files for this project are centrally located within the repository at the following path: `Hardware/EET_BMS_Layout`.
+
+This directory contains the comprehensive PCB Layout files and the Circuit Plan (Schematic). To ensure clarity and ease of navigation, the circuit plan is organized into three primary functional sections:
+### 1. Current Sense Amplifier
+This section focuses on the protection path and current monitoring. 
+
+The protection path includes a bidirectional switch that allows separate control of charging and discharging directions. This separation simplifies safety interlocks during experiments and enables targeted tests such as charge-only preconditioning or discharge-only profiling without rewiring the pack harness. Figure 13 shows the detailed PMOS arrangement and gate-drive routing that implement this bidirectional control.
+
+The bidirectional switching stage consists of two P-channel power MOSFETs (Q1, Q2, SUD19P06-60) connected source-to-source at the SSR junction, enabling current flow in both directions through their opposing body diodes. Gate networks (R47/R54: 33 kΩ, R52/R55: 100 Ω) hold both MOSFETs off at ≈BAT+ when no control signal is applied. Two N-channel MOSFETs (Q3, Q4, BSS138) act as low-side gate drivers: when activated, they pull the respective gate of Q1 or Q2 to ground, creating the required negative gate-source voltage to turn the P-channel device on. Additional dividers (R49/R57: 33 kΩ, R48/R56: 100 Ω) condition the drive signals for Q3 and Q4.
+
+When BAT_Relay_Charge = HIGH, Q3 turns on and pulls down the gate of Q1, enabling the charge path from BAT+ to the SSR junction. When BAT_Relay_Discharge = HIGH, Q4 pulls down the gate of Q2, activating the discharge path from the battery through the SSR junction to the shunt. With both signals low, Q3 and Q4 remain off, and both power MOSFETs stay disabled. The arrangement provides fully bidirectional control of charge and discharge currents with low voltage drop thanks to the parallel MOSFET configuration and the 5 mΩ shunt.
+
+For the current measurement a shunt of 5 mΩ and the current sense amplifier is used. The voltage is send to the BMS-Chip as seen in the layout. 
+
+### 2. BMS Frontend
+
+In the BMS Frontend the schematics of the TLE9012DQU and the passive balancing are shown. 
+
+The TLE9012DQU is the main BMS IC for the BMS. Its task is to provide analog-to-digital conversion of cell voltages, temperatures and current, as well as implement part of the necessary circuitry for passive cell balancing. The BMS setup monitors four series-connected cells, the pack current as well as 3 NTC based temperature sensors. The current design uses only 4 of the 12 available channels of the TLE9012DQU. The PCB Schematic mainly follows the reference design outlined in the [user manual](https://www.infineon.com/dgdl/Infineon-Infineon-TLE9012DQU_TLE9015DQU-UM-v01_00-EN-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c4f8750574b&da=t).  This is sufficient for the laboratory stack. For more than 12 cells, the setup can easily be expanded by using multiple TLE9012DQU in daisy chain mode, where one BMS IC transmits their data to the next IC in the chain using a proprietary galvanically isolated interface.
+
+![[BMS_Frontend.png]]
+
+The Figure above shows the active front-end. It also illustrates the input-filter and balancing network. Although the TLE9012DQU integrates the balancing MOSFETs internally, the external bleed resistors and filtering components are distributed on the board to support reliable cell equalisation even though this inevitably places some load on the harness during balancing. Unused cell inputs of the TLE9012DQU are terminated according to the reference design for a 12-to-4 cell reduction, ensuring that measurement integrity on the active cell taps is maintained. The integrated ADC’s are used for the cell-voltage and temperature sensing and leave space to allow switching to Bipolar Auxiliary Voltage Measurement (BAVM) if BAVM measurement becomes desirable. This is possible through the TMP3 and TMP4 channels. Thermal monitoring is implemented via a NTC harness that connects to the MCU and 3 NTC at the TLE9012. 
+
+The TLE9012DQU communicates with the STM32 controller and provides cell-voltage, current and temperature data, controls balancing switches and communicates faults via the dedicated Error net.
 
 Documentation for this IC is scattered across the [datasheet](https://www.infineon.com/dgdl/Infineon-TLE9012DQU-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c3d27c75737) and the [user manual](https://www.infineon.com/dgdl/Infineon-Infineon-TLE9012DQU_TLE9015DQU-UM-v01_00-EN-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c4f8750574b&da=t). The datasheet provides mainly information about the electrical characteristics of the chip, while the user manual contains the register map, a reference schematic, some additional information, and a few example commands. If there is some information missing in both the user manual and the datasheet, it is usually a good idea to check the datasheet of the rather similar predecessor, [TLE9012AQU](https://www.mouser.com/datasheet/2/196/Infineon_TLE9012AQU_DataSheet_v01_10_EN-1890780.pdf).
 
 The PCB Schematic mainly follows the reference design outlined in the user manual, with the main difference being the reduction of the number of connected cells from 12 to just 4. Unused channels are connected to the GND potential. In addition, the single-wire UART interface is used instead of the ISO-UART, which is used in the reference design. To allow for bidirectional current measurements, the TMP3 and TMP4 channels are used with the BAVM function of the TLE9012. The BAVM function allows for repurposing the 16-bit ADC used for independently measuring the sum voltage of all cells as a bipolar ADC on inputs TMP3 and TMP4.
+
+According to the TLE9012DQU datasheet, the VS pin should typically be connected to the highest cell of the battery pack. However, during testing, we encountered an issue where the supply current for the internal regulator caused an excessive drain on the batteries.
+
+To prevent this parasitic discharge, we have modified the layout to supply the TLE9012DQU’s internal regulator from the same external power source used for the STM32H755.
+
+### 3. STM MCU (Microcontroller Unit)
+
+This section details the heart of the system, featuring the **STM32H7** microcontroller. It illustrates all relevant connections and pin assignments, specifically including:
+- **Decoupling Networks:** Dedicated decoupling for `VDD`, `VDDA`, `USB`, and `VDDLDO` to ensure signal integrity.
+- **Power Rails:** Specific layouts for the `VDD` and `VDDA` power supplies.
+- **NTC Array:** The interface for the Negative Temperature Coefficient thermistor sensors.
+- **Communication Interfaces:**
+    - **Isolated UART:** For safe, noise-resistant serial communication.
+    - **Isolated RS485:** For robust industrial-grade data transfer.
+- **Power Management:** The **DC-DC Converter** for internal voltage regulation.
+- **User Interface:** The connection and driver circuitry for the **OLED Display**.
+- **Programming/Debugging:** The **Debugger Connection** for firmware uploads and real-time troubleshooting.
+
+
 
 ## Microcontroller: STM32H755ZI
 

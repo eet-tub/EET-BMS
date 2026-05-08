@@ -684,14 +684,32 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Voltage",
+          "name": "Voltage",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Beschreibung",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
-      "sort_field": "Referenz"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -736,7 +754,7 @@
   "sheets": [
     [
       "06b1545d-931e-4b77-bb00-ee7a1c7d202f",
-      ""
+      "Root"
     ],
     [
       "94ee3778-4487-453c-9b46-c3981272addc",
@@ -748,7 +766,7 @@
     ],
     [
       "a8b50d73-6678-4daa-914b-2bd372fc950b",
-      "Current Sense Amplifier"
+      "Bidirectional Switch and Current Sense Amplifier"
     ]
   ],
   "text_variables": {}
