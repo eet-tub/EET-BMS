@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardware &mdash; EET_BMS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Firmware Overview" href="Firmware%20Overview.html" />
+    <link rel="prev" title="Getting Started" href="Getting%20started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EET_BMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting%20started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-files">Hardware files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#current-sense-amplifier">1. Current Sense Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bms-frontend">2. BMS Frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stm-mcu-microcontroller-unit">3. STM MCU (Microcontroller Unit)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#microcontroller-stm32h755zi">Microcontroller: STM32H755ZI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#power-supply-scheme">Power Supply Scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-measurement-and-solid-state-relay">Current Measurement and Solid State Relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passive-balancing">Passive Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-during-assembly">Tips during assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pinout-table">Pinout Table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html">Firmware Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html#power-source">Power Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Known%20quirks%20and%20errors.html">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BMS%20Assembly.html">BMS Assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Configurations for the Debugger in CubeIDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Initialising and testing the BMS for the first time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logging%20with%20Python.html">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html#license-hardware-and-documentation">License Hardware and Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EET_BMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Hardware</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Hardware.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hardware">
+<h1>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h1>
+<p>Here are the main parts of the BMS-Hardware described. It includes the BMS-Chip, the Microcontroller and Power supply scheme. For understanding where the components are located the following graph was created:</p>
+<p><img alt="BMS Components Overview" src="_images/BMS_components_overview.png" /></p>
+<section id="hardware-files">
+<h2>Hardware files<a class="headerlink" href="#hardware-files" title="Link to this heading"></a></h2>
+<p>The hardware design files for this project are centrally located within the repository at the following path: <code class="docutils literal notranslate"><span class="pre">Hardware/EET_BMS_Layout</span></code>.</p>
+<p>This directory contains the comprehensive PCB Layout files and the Circuit Plan (Schematic). To ensure clarity and ease of navigation, the circuit plan is organized into three primary functional sections:</p>
+<section id="current-sense-amplifier">
+<h3>1. Current Sense Amplifier<a class="headerlink" href="#current-sense-amplifier" title="Link to this heading"></a></h3>
+<p>This section focuses on the protection path and current monitoring.</p>
+<p>The protection path includes a bidirectional switch that allows separate control of charging and discharging directions. This separation simplifies safety interlocks during experiments and enables targeted tests such as charge-only preconditioning or discharge-only profiling without rewiring the pack harness. Figure 13 shows the detailed PMOS arrangement and gate-drive routing that implement this bidirectional control.</p>
+<p>The bidirectional switching stage consists of two P-channel power MOSFETs (Q1, Q2, SUD19P06-60) connected source-to-source at the SSR junction, enabling current flow in both directions through their opposing body diodes. Gate networks (R47/R54: 33 kΩ, R52/R55: 100 Ω) hold both MOSFETs off at ≈BAT+ when no control signal is applied. Two N-channel MOSFETs (Q3, Q4, BSS138) act as low-side gate drivers: when activated, they pull the respective gate of Q1 or Q2 to ground, creating the required negative gate-source voltage to turn the P-channel device on. Additional dividers (R49/R57: 33 kΩ, R48/R56: 100 Ω) condition the drive signals for Q3 and Q4.</p>
+<p>When BAT_Relay_Charge = HIGH, Q3 turns on and pulls down the gate of Q1, enabling the charge path from BAT+ to the SSR junction. When BAT_Relay_Discharge = HIGH, Q4 pulls down the gate of Q2, activating the discharge path from the battery through the SSR junction to the shunt. With both signals low, Q3 and Q4 remain off, and both power MOSFETs stay disabled. The arrangement provides fully bidirectional control of charge and discharge currents with low voltage drop thanks to the parallel MOSFET configuration and the 5 mΩ shunt.</p>
+<p>For the current measurement a shunt of 5 mΩ and the current sense amplifier is used. The voltage is send to the BMS-Chip as seen in the layout.</p>
+</section>
+<section id="bms-frontend">
+<h3>2. BMS Frontend<a class="headerlink" href="#bms-frontend" title="Link to this heading"></a></h3>
+<p>In the BMS Frontend the schematics of the TLE9012DQU and the passive balancing are shown.</p>
+<p>The TLE9012DQU is the main BMS IC for the BMS. Its task is to provide analog-to-digital conversion of cell voltages, temperatures and current, as well as implement part of the necessary circuitry for passive cell balancing. The BMS setup monitors four series-connected cells, the pack current as well as 3 NTC based temperature sensors. The current design uses only 4 of the 12 available channels of the TLE9012DQU. The PCB Schematic mainly follows the reference design outlined in the <a class="reference external" href="https://www.infineon.com/dgdl/Infineon-Infineon-TLE9012DQU_TLE9015DQU-UM-v01_00-EN-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c4f8750574b&amp;amp;da=t">user manual</a>.  This is sufficient for the laboratory stack. For more than 12 cells, the setup can easily be expanded by using multiple TLE9012DQU in daisy chain mode, where one BMS IC transmits their data to the next IC in the chain using a proprietary galvanically isolated interface.</p>
+<p><img alt="BMS Frontend" src="_images/BMS_Frontend.png" /></p>
+<p>The Figure above shows the active front-end. It also illustrates the input-filter and balancing network. Although the TLE9012DQU integrates the balancing MOSFETs internally, the external bleed resistors and filtering components are distributed on the board to support reliable cell equalisation even though this inevitably places some load on the harness during balancing. Unused cell inputs of the TLE9012DQU are terminated according to the reference design for a 12-to-4 cell reduction, ensuring that measurement integrity on the active cell taps is maintained. The integrated ADC’s are used for the cell-voltage and temperature sensing and leave space to allow switching to Bipolar Auxiliary Voltage Measurement (BAVM) if BAVM measurement becomes desirable. This is possible through the TMP3 and TMP4 channels. Thermal monitoring is implemented via a NTC harness that connects to the MCU and 3 NTC at the TLE9012.</p>
+<p>The TLE9012DQU communicates with the STM32 controller and provides cell-voltage, current and temperature data, controls balancing switches and communicates faults via the dedicated Error net.</p>
+<p>Documentation for this IC is scattered across the <a class="reference external" href="https://www.infineon.com/dgdl/Infineon-TLE9012DQU-DataSheet-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c3d27c75737">datasheet</a> and the <a class="reference external" href="https://www.infineon.com/dgdl/Infineon-Infineon-TLE9012DQU_TLE9015DQU-UM-v01_00-EN-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7e7124d1017f0c4f8750574b&amp;amp;da=t">user manual</a>. The datasheet provides mainly information about the electrical characteristics of the chip, while the user manual contains the register map, a reference schematic, some additional information, and a few example commands. If there is some information missing in both the user manual and the datasheet, it is usually a good idea to check the datasheet of the rather similar predecessor, <a class="reference external" href="https://www.mouser.com/datasheet/2/196/Infineon_TLE9012AQU_DataSheet_v01_10_EN-1890780.pdf">TLE9012AQU</a>.</p>
+<p>The PCB Schematic mainly follows the reference design outlined in the user manual, with the main difference being the reduction of the number of connected cells from 12 to just 4. Unused channels are connected to the GND potential. In addition, the single-wire UART interface is used instead of the ISO-UART, which is used in the reference design. To allow for bidirectional current measurements, the TMP3 and TMP4 channels are used with the BAVM function of the TLE9012. The BAVM function allows for repurposing the 16-bit ADC used for independently measuring the sum voltage of all cells as a bipolar ADC on inputs TMP3 and TMP4.</p>
+<p>According to the TLE9012DQU datasheet, the VS pin should typically be connected to the highest cell of the battery pack. However, during testing, we encountered an issue where the supply current for the internal regulator caused an excessive drain on the batteries.</p>
+<p>To prevent this parasitic discharge, we have modified the layout to supply the TLE9012DQU’s internal regulator from the same external power source used for the STM32H755.</p>
+</section>
+<section id="stm-mcu-microcontroller-unit">
+<h3>3. STM MCU (Microcontroller Unit)<a class="headerlink" href="#stm-mcu-microcontroller-unit" title="Link to this heading"></a></h3>
+<p>This section details the heart of the system, featuring the <strong>STM32H7</strong> microcontroller. It illustrates all relevant connections and pin assignments, specifically including:</p>
+<ul class="simple">
+<li><p><strong>Decoupling Networks:</strong> Dedicated decoupling for <code class="docutils literal notranslate"><span class="pre">VDD</span></code>, <code class="docutils literal notranslate"><span class="pre">VDDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USB</span></code>, and <code class="docutils literal notranslate"><span class="pre">VDDLDO</span></code> to ensure signal integrity.</p></li>
+<li><p><strong>Power Rails:</strong> Specific layouts for the <code class="docutils literal notranslate"><span class="pre">VDD</span></code> and <code class="docutils literal notranslate"><span class="pre">VDDA</span></code> power supplies.</p></li>
+<li><p><strong>NTC Array:</strong> The interface for the Negative Temperature Coefficient thermistor sensors.</p></li>
+<li><p><strong>Communication Interfaces:</strong></p>
+<ul>
+<li><p><strong>Isolated UART:</strong> For safe, noise-resistant serial communication.</p></li>
+<li><p><strong>Isolated RS485:</strong> For robust industrial-grade data transfer.</p></li>
+</ul>
+</li>
+<li><p><strong>Power Management:</strong> The <strong>DC-DC Converter</strong> for internal voltage regulation.</p></li>
+<li><p><strong>User Interface:</strong> The connection and driver circuitry for the <strong>OLED Display</strong>.</p></li>
+<li><p><strong>Programming/Debugging:</strong> The <strong>Debugger Connection</strong> for firmware uploads and real-time troubleshooting.</p></li>
+</ul>
+</section>
+</section>
+<section id="microcontroller-stm32h755zi">
+<h2>Microcontroller: STM32H755ZI<a class="headerlink" href="#microcontroller-stm32h755zi" title="Link to this heading"></a></h2>
+<p>To ensure enough computation power to test modern state estimation techniques, a dual-core STM32 microcontroller is used, offering an ARM Cortex M4 and M7 core, with 1Mbyte of Flash per Core as well as 1Mbyte of SRAM.</p>
+<p>The schematic of the microcontroller section is a bare-bones implementation of the STM32H755 as described in the datasheet. The H755 offers the possibility to increase efficiency by using some external components to form a switching mode regulator. Due to reasons of simplicity, this is not implemented in this design and the internal linear regulator is used to supply the core voltage.</p>
+<p>In terms of communication interfaces, three UARTs of the STM32 are in use, UART Peripheral 1 is used as an isolated UART, which can be connected to a UART-USB connector. For communication between a host and multiple BMS boards, UART3 is used in combination with an isolated RS485 transceiver, which implements a custom serial protocol. The third UART is used in single wire mode to communicate with the TLE9012DQU (see the known quirks and errors section for further information).</p>
+</section>
+<section id="power-supply-scheme">
+<h2>Power Supply Scheme<a class="headerlink" href="#power-supply-scheme" title="Link to this heading"></a></h2>
+<p>While the TLE9012DQU supplies itself from the Battery, the STM32 would overload the internal regulator of the TLE, so an independent power source is necessary. The supply is therefore ensured by using an isolated DC/DC 5V to 5V converter with the primary side supplied by the Host. The DC/DC itself is unregulated and has an ensured output voltage of at least 4.5V. Therefore, two independent 3V3 regulators are used to supply digital and analog ICs with 3V3.</p>
+<p>To monitor the current consumption of the STM32 and supporting ICs, it is possible to optionally utilise a shunt and a current sense amplifier connected to the ADC peripheral of the STM.</p>
+</section>
+<section id="current-measurement-and-solid-state-relay">
+<h2>Current Measurement and Solid State Relay<a class="headerlink" href="#current-measurement-and-solid-state-relay" title="Link to this heading"></a></h2>
+<p>To protect the Battery in case the BMS detects an error, a solid-state relay consisting of two PMOS acting as a high-side switch in a common-source configuration is used. To allow current to flow in and out of the Battery, the BMS needs to actively pull the Gates of the PFETs to GND. This is achieved by a logic-level NFET connected to a GPIO on the STM.</p>
+<p>In Series with the Solid State Relay is a 5 m Ohm shunt resistor with a TSC2012 current amplifier. The Amplifier connects to the TLE9012DQU and is biased by a resistor divider to measure bidirectional currents. The reference is also measured by the TLE9012DQU, so no additional compensation is required by the user.</p>
+</section>
+<section id="passive-balancing">
+<h2>Passive Balancing<a class="headerlink" href="#passive-balancing" title="Link to this heading"></a></h2>
+<p>Currently the BMS provides a passive Balancing of 70 mA.</p>
+</section>
+<section id="tips-during-assembly">
+<h2>Tips during assembly<a class="headerlink" href="#tips-during-assembly" title="Link to this heading"></a></h2>
+<p>Assembly is rather straightforward, but I suggest using a stencil as well as lead-free solder paste. Make sure to keep the amount of excessive solder paste as low as possible to prevent solder bridges under the Pins of the STM and TLE. While placing the components, make sure that components marked as DNP (do not populate) are not placed on the PCB, which may lead to unexpected behavior.</p>
+<p>After soldering the SMD components, it is highly recommended to check that a debug connection to the STM can be established using the ST-Link and a lab-bench power supply.</p>
+</section>
+<section id="pinout-table">
+<h2>Pinout Table<a class="headerlink" href="#pinout-table" title="Link to this heading"></a></h2>
+<p>Pinout for J2 (Battery Connector):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>Bat+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>Cell_4+</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>Cell_3+</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>Cell_2+</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Pin_5</p></td>
+<td><p>Cell_1+</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Pin_6</p></td>
+<td><p>Cell_1-</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Pin_7</p></td>
+<td><p>Bat-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J4 (TMP1):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>NTC+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>NTC-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J3 (TMP2):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>NTC+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>NTC-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J1 (TMP3):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>NTC+</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>NTC-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J9 (CPower Supply):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>5V</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J6 (RS485):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>RS485-VCC (3.3-5V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>A</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>B</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>RS485-GND</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J8 (UART_Shell):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>UART-GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>TX</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>RX</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>UART-VCC (3.3-5V)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pinout for J10 (SW_Debug_Connector):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Pin number</p></th>
+<th class="head"><p>Pin name</p></th>
+<th class="head"><p>Pin net</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Pin_1</p></td>
+<td><p>+3V3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Pin_2</p></td>
+<td><p>SWCLK</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Pin_3</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Pin_4</p></td>
+<td><p>SWDIO</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Pin_5</p></td>
+<td><p>NRST</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Pin_6</p></td>
+<td><p>SWO</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Getting%20started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Firmware%20Overview.html" class="btn btn-neutral float-right" title="Firmware Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EET TU Berlin Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

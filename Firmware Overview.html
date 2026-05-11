@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firmware Overview &mdash; EET_BMS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Known quirks and errors" href="Known%20quirks%20and%20errors.html" />
+    <link rel="prev" title="Hardware" href="Hardware.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EET_BMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting%20started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hardware.html">Hardware</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Firmware Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#firmware-structure">Firmware Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inter-processor-communciation">Inter Processor Communciation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#serial-protocol">Serial Protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extending-the-firmware">Extending the Firmware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state-estimation">State Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#balancing">Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-protocol">Communication Protocol</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#power-source">Power Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recovery-procedure">Recovery Procedure:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Known%20quirks%20and%20errors.html">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BMS%20Assembly.html">BMS Assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Configurations for the Debugger in CubeIDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Initialising and testing the BMS for the first time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logging%20with%20Python.html">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html#license-hardware-and-documentation">License Hardware and Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EET_BMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Firmware Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Firmware Overview.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="firmware-overview">
+<h1>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Link to this heading"></a></h1>
+<p>As a result of the dual core nature of the STM32H755, the software consists of two separate sub-projects which share a common .ioc file for code generation and peripheral initialization, as well as a folder named Common, containing files present in both sub-projects. Both cores operate independently by default except for a synchronization event at the start. Data between Cores is shared by a mailbox system, further described in the Inter-Processor Communication section.</p>
+<p>To ensure the basic BMS functions, mainly monitoring and communication of log data to the host PC, these functions are running on the Cortex M4 core. The M4 core sends this data to the Cortex M7, which runs the State Estimation. This decoupling of monitoring and state estimation functions allows for testing new algorithms in real time while not compromising the monitoring function in case new state estimation algorithms are facing bugs or too high computational complexity.</p>
+<section id="firmware-structure">
+<h2>Firmware Structure<a class="headerlink" href="#firmware-structure" title="Link to this heading"></a></h2>
+<p>The following graphic gives a brief overview of the firmware structure. Both Cores operate on a super loop approach, so no overhead and complexity of an RTOS is introduced.</p>
+<p><img alt="Software Structure STM32" src="_images/Software_Structure.drawio.png" /></p>
+<p>Cortex M7:</p>
+<p>In each loop iteration, the Cortex M7’s main loop checks for updated measurement data from the M4. If new data is available, the state estimation code found in the BMS_State_Estimation/Src/BMS_State_Estimation.c is executed and the results can be passed back to the M4 via an Inter-Processor Communication Mailbox. The OLED is then updated with new data in the Dusplay_Functions/Src/Display_Function.c file. The OLED is based on a SSD1306 controller IC which interfaces with the STM32 via I2C. The <a class="reference external" href="https://github.com/afiskon/stm32-ssd1306">stm32-ssd1306 library from Aleksander Alekseev</a> is used to interface with the display.</p>
+<p>To send debug messages over the isolated UART Interface, the Cortex M7s _write and __io_putchar prototypes are redefined to print data via UART in blocking mode. This allows for using the printf function of stdio.h to send data as ascii strings. Due to the blocking nature, debug messages will influence execution time of the main loop!</p>
+<p>Cortex M4:</p>
+<p>The Cortex M4 loop starts with executing the BMS_loop() function found in Core/Src/BMS_Functions.c. This loop function uses the abstraction layer found in the TLE9012_Lib folder to interface with the TLE9012 chip, initiates a measurement, serves the watchdog of the TLE, checks if any error occurs, and calls the BMS_Balance() function to handle cell balancing. Measurement Data is written into a global (in the context of the Cortex M4) variable module, which is of the shared datatype Cell_Module for further use. The values of the module variable are then passed to the Cortex M7 via an Inter Processor Communication Mailbox.</p>
+<p>After evaluating the state of the BMS, the rs485_communication_loop() function handling the serial RS485 protocol is called. The RS485 code is written in a way to prevent the communication protocol from interfering with the cell monitoring by the use of receive and transmit interrupts. In the rs485_communication_loop(), it is first checked if a packet is received successfully or if a timeout occurred. If a packet was successfully received, the rs485_process_package() function is called, processing the received packet and sending an appropriate response. The Transmit is also interrupt-based to ensure continuous monitoring of the Battery.</p>
+</section>
+<section id="inter-processor-communciation">
+<h2>Inter Processor Communciation<a class="headerlink" href="#inter-processor-communciation" title="Link to this heading"></a></h2>
+<p>Both STM32 Cores can work fully independently with their own peripherals, RAM and Flash sections. To interact with each other, a mechanism has to be established. There are many different approaches to achieve this. The main methods are Hardware Semaphores and Shared Memory. Shared Memory is a region in SRAM accessed by both cores to exchange data. Hardware Semaphores are a peripheral that can be used for the management of shared resources and to pass events in the form of interrupts between cores. ST suggests using the OpenAMP Framework as a middleware to handle the transfer of data through these mechanisms.</p>
+<p>While the OpenAMP library provides a great set of tools to reliably solve this problem, a much simpler approach was used in this project, which can be found in the Common/Inter_Process_Communication folder. SRAM4 is used as shared Memory as suggested in the application notes of STMicro. A Number of mailboxes is initialized by the Cortex M7 before the start of the Cortex M4, each containing a header consisting of a flag to signalize if new data is available, a flag to protect the mailbox during read and write accesses, a length value, and the data itself. A mailbox register table is initialized at the start of SRAM4 to keep track of mailbox addresses and states. Access to mailboxes is provided by read and write methods. To check the status of a mailbox, a check function is provided.</p>
+<p>To ensure correct interpretation of datatypes exchanged via mailboxes, a Shared_DataTypes header is included in the common folder, ensuring access to the datatype in both the M4 and M7 program files.</p>
+</section>
+<section id="serial-protocol">
+<h2>Serial Protocol<a class="headerlink" href="#serial-protocol" title="Link to this heading"></a></h2>
+<p>The Serial Protocol used in the RS485 interface at (115200 baud 8N1) is uses the following format</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Byte 1</p></th>
+<th class="head"><p>Byte 2</p></th>
+<th class="head"><p>Byte 3</p></th>
+<th class="head"><p>n Bytes</p></th>
+<th class="head"><p>Byte n+1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bus ID</p></td>
+<td><p>Command</p></td>
+<td><p>Payload Length n</p></td>
+<td><p>Payload</p></td>
+<td><p>Checksum</p></td>
+</tr>
+</tbody>
+</table>
+<p>The Bus ID of the device is hardcoded in the Macro RS485_ID found in RS485_Communication.h and needs to be unique for each BMS on the same bus. The BMS responds to commands using the same format, addressing the Host with the ID 0x80. In case the payload length is zero, byte 3 is directly followed by the checksum. The checksum is currently not implemented and therefore can be ignored in processing, but has to be transmitted.</p>
+<p>Currently implemented commands are GET_MODULE_INFO which returns module info in a binary format as well as GET_MODULE_INFO_AS_STRING which returns the same data in a ascii format which is human readable at the expanse of taking more bus bandwidth.</p>
+</section>
+<section id="extending-the-firmware">
+<h2>Extending the Firmware<a class="headerlink" href="#extending-the-firmware" title="Link to this heading"></a></h2>
+<p>The Firmware in this repository builds a foundation to experiment with more complex BMS algorithms. Therefore, it tries to provide easy expansion/callbacks for the following use cases:</p>
+</section>
+<section id="state-estimation">
+<h2>State Estimation<a class="headerlink" href="#state-estimation" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">bmsStateEstimationCallback</span></code> is called every time there are updated measurements from the cortex M4 and returns new estimations about the state of each cell. State estimation algorithms shall therefore be added to this function.</p>
+</section>
+<section id="balancing">
+<h2>Balancing<a class="headerlink" href="#balancing" title="Link to this heading"></a></h2>
+<p>Balancing is currently seen as a Cortex M4 function and is part of the BMS_Functions.c. The implementation is a simple Top-Balancing algorithm based on cell voltage and called from the BMS_Loop. A proper callback function inside the Cortex M7’s codebase might be implemented in the future and this documentation will be updated.</p>
+</section>
+<section id="communication-protocol">
+<h2>Communication Protocol<a class="headerlink" href="#communication-protocol" title="Link to this heading"></a></h2>
+<p>New commands for the RS485 interface might be added in the rs485_process_package function by appending cases to the switch(command) construct. It is strongly recommended to use 1. a preprocessor macro to assign the command ID a human-readable name, and 2. use a dedicated function called from the switch case construct to keep the readability of the function high. It is also strongly recommended to follow the naming scheme rs485_command_yourFunctionName()</p>
+</section>
+</section>
+<section id="power-source">
+<h1>Power Source<a class="headerlink" href="#power-source" title="Link to this heading"></a></h1>
+<p>The BMS system is externally supplied. Therefore, it is vital that the power settings are configured correctly in the <strong>IOC file (STM32CubeMX)</strong>.</p>
+<ul class="simple">
+<li><p><strong>Incorrect Settings:</strong> If the power supply settings are not correct, the BMS will fail to start normally. In this case, the system must be manually started by pulling the <strong>BOOT0 pin to High</strong>.</p></li>
+<li><p><strong>LDO Configuration:</strong> The specific function for the supply configuration is: <code class="docutils literal notranslate"><span class="pre">HAL_PWREx_ConfigSupply(PWR_LDO_SUPPLY);</span></code></p></li>
+<li><p><strong>Modifying Settings:</strong> This configuration can be adjusted in the STM32CubeIDE/CubeMX interface under the <strong>RCC Tab</strong>. Ensure that the supply mode matches your hardware design (e.g., LDO supply vs. SMPS).</p></li>
+</ul>
+<p><img alt="Power Source Config" src="_images/Power_Source.png" /></p>
+<section id="recovery-procedure">
+<h2>Recovery Procedure:<a class="headerlink" href="#recovery-procedure" title="Link to this heading"></a></h2>
+<p>If the STM hangs due to critical faults during the boot process the Power demand usually drops down to 10-12mA. The Problem can be resolved by keeping the BOOT Pin high during the boot process using a Jumper connecting 3V3 and the STM Side of R41 while cycling the Power Supply. Power demand should increase to 30-40mA and you now can connect an STLink with the Cube Programmer and erase the flash. After this procedure, the Debug Process should work as normal.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Hardware.html" class="btn btn-neutral float-left" title="Hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Known%20quirks%20and%20errors.html" class="btn btn-neutral float-right" title="Known quirks and errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EET TU Berlin Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

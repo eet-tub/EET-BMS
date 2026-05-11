@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurations for the Debugger in CubeIDE &mdash; EET_BMS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Initialising and testing the BMS for the first time" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html" />
+    <link rel="prev" title="BMS Configuration" href="Configuration%20for%20the%20BMS.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EET_BMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting%20started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html">Firmware Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html#power-source">Power Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Known%20quirks%20and%20errors.html">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BMS%20Assembly.html">BMS Assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configurations for the Debugger in CubeIDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-settings">Debugging Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cm4">CM4</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cm4-main">CM4 Main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cm4-debugger">CM4 Debugger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cm4-startup">CM4 Startup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cm7">CM7</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cm7-main">CM7 Main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cm7-debugger">CM7 Debugger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cm7-startup">CM7 Startup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-group">Launch Group</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Initialising and testing the BMS for the first time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logging%20with%20Python.html">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html#license-hardware-and-documentation">License Hardware and Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EET_BMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configurations for the Debugger in CubeIDE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Configurations for the Debugger in CubeIDE.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configurations-for-the-debugger-in-cubeide">
+<h1>Configurations for the Debugger in CubeIDE<a class="headerlink" href="#configurations-for-the-debugger-in-cubeide" title="Link to this heading"></a></h1>
+<p>The STM32H755 used in this project is a rather complex dual-core MCU. This leads to some additional configuration required to set up the project to debug properly. Thankfully, ST documented the process in <a class="reference external" href="https://www.st.com/resource/en/application_note/dm00629855-getting-started-with-projects-based-on-dualcore-stm32h7-microcontrollers-in-stm32cubeide-stmicroelectronics.pdf">AN5361</a>. Make sure to also deactivate the initial breakpoint in the debug configurations of both MCUs to prevent faults when starting the debug session via the debug group.</p>
+<section id="debugging-settings">
+<h2>Debugging Settings<a class="headerlink" href="#debugging-settings" title="Link to this heading"></a></h2>
+<p>For effective debugging of the BMS, it is essential to correctly modify the <strong>Debug Configuration</strong> settings. The primary reference for this process is the official documentation from STMicroelectronics.</p>
+<p>A key resource is the application note <a class="reference external" href="https://www.st.com/resource/en/application_note/dm00629855-getting-started-with-projects-based-on-dualcore-stm32h7-microcontrollers-in-stm32cubeide-stmicroelectronics.pdf">AN5361</a>**: <em>Getting started with projects based on dual-core STM32H7 microcontrollers in STM32CubeIDE</em>.</p>
+<p>For the general setting configuration, you can refer to <strong>Chapter 3</strong>. However, please note that there are specific minor changes required for the BMS project. These project-specific modifications must be applied to ensure compatibility and stability.</p>
+<section id="cm4">
+<h3>CM4<a class="headerlink" href="#cm4" title="Link to this heading"></a></h3>
+<p>For the CM4 are following setting needed:</p>
+<section id="cm4-main">
+<h4>CM4 Main<a class="headerlink" href="#cm4-main" title="Link to this heading"></a></h4>
+<p><img alt="Debug CM4 Main" src="_images/Debug_CM4_Main.png" /></p>
+</section>
+<section id="cm4-debugger">
+<h4>CM4 Debugger<a class="headerlink" href="#cm4-debugger" title="Link to this heading"></a></h4>
+<p><img alt="Debug CM4 Debugger" src="_images/Debug_CM4_Debugger.png" /></p>
+</section>
+<section id="cm4-startup">
+<h4>CM4 Startup<a class="headerlink" href="#cm4-startup" title="Link to this heading"></a></h4>
+<p><img alt="Debug CM4 Startup" src="_images/Debug_CM4_Startup.png" /></p>
+</section>
+</section>
+<section id="cm7">
+<h3>CM7<a class="headerlink" href="#cm7" title="Link to this heading"></a></h3>
+<p>For the CM7 are following setting needed:</p>
+<section id="cm7-main">
+<h4>CM7 Main<a class="headerlink" href="#cm7-main" title="Link to this heading"></a></h4>
+<p><img alt="Debug CM7 Main" src="_images/Debug_CM7_Main.png" /></p>
+</section>
+<section id="cm7-debugger">
+<h4>CM7 Debugger<a class="headerlink" href="#cm7-debugger" title="Link to this heading"></a></h4>
+<p><img alt="Debug CM7 Debugger" src="_images/Debug_CM7_Debugger.png" /></p>
+</section>
+<section id="cm7-startup">
+<h4>CM7 Startup<a class="headerlink" href="#cm7-startup" title="Link to this heading"></a></h4>
+<p>in this setting you have to add both CPUs.</p>
+<p><img alt="Debug CM7 Startup" src="_images/Debug_CM7_Startup.png" /></p>
+</section>
+</section>
+</section>
+<section id="launch-group">
+<h2>Launch Group<a class="headerlink" href="#launch-group" title="Link to this heading"></a></h2>
+<p>To debug the STM32H7, you have two primary options for managing the dual-core architecture (Cortex-M7 and Cortex-M4):</p>
+<ol class="arabic simple">
+<li><p><strong>Sequential Debugging:</strong> You have the possibility to debug the cores manually by starting with the <strong>CM7</strong> first, followed by the <strong>CM4</strong>.</p></li>
+<li><p><strong>Launch Group (Recommended):</strong> Alternatively, you can create a “Launch Group” within STM32CubeIDE. Using a launch group allows both processors to start successively in an automated manner.
+When setting up a launch group, it is critical to follow the correct order: you must add the <strong>CM7</strong> first and then the <strong>CM4</strong>.</p></li>
+</ol>
+<p><img alt="Debug Launch Group" src="_images/Debug_Launch_Group.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Configuration%20for%20the%20BMS.html" class="btn btn-neutral float-left" title="BMS Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html" class="btn btn-neutral float-right" title="Initialising and testing the BMS for the first time" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EET TU Berlin Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

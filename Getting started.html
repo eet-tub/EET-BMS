@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; EET_BMS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hardware" href="Hardware.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EET_BMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#repo-organization">Repo organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toolchains">Toolchains</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html">Firmware Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html#power-source">Power Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Known%20quirks%20and%20errors.html">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BMS%20Assembly.html">BMS Assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Configurations for the Debugger in CubeIDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Initialising and testing the BMS for the first time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Logging%20with%20Python.html">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html#license-hardware-and-documentation">License Hardware and Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EET_BMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Getting started.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<p>The EET-BMS is a BMS solution developed to monitor battery packs with 3 to 4 cells in series for aging tests and to provide a platform for developing and validating state-of-the-art state estimation algorithms using battery testers and hardware available at EET.</p>
+<p>To get started working with the BMS, you will need:</p>
+<ul class="simple">
+<li><p>1x Assembled BMS Board</p></li>
+<li><p>1x ST-Link (optional for programming and debugging)</p></li>
+<li><p>1x Pack with 4s cell configuration</p></li>
+<li><p>1x M8 cable lug for the positive battery terminal</p></li>
+<li><p>up to 3x NTC Sensors</p></li>
+<li><p>1x USB-RS485 Converter</p></li>
+<li><p>1x USB-UART Converter (optional)</p></li>
+<li><p>1x 5V Supply</p></li>
+<li><p>1x 3D-Printed Holder</p></li>
+<li><p>4x M3 Screws</p></li>
+<li><p>1x M8 Screw and Nut</p></li>
+</ul>
+<p>The assembled PCB is first mounted on the 3D-printed holder using the 4 M3 Screws. In the next step, the Battery can be secured with zip ties. The Cell connector coming from the battery pack is connected to the 7-Pin connector marked with Cells. You need only 6-Pins because the BMS internal regulator is powered by the external power source, not the batteries. Make sure that the orientation of the cell connector is correct and the highest Potential is on the right side of the connector, marked with + on the PCB. The NTC Sensors are connected in a similar way with the three 2-pin connectors next to the cell connector marked with TMP1, TMP2 and TMP3.</p>
+<p>The Potential of these connectors is directly tied to the negative Potential of the battery pack! For Power and communication, the connectors on the lower right side of the PCB are used. The 2-Pin connector is used as the 5V Power supply for the STM32, isolators, etc., while the 4-pin connectors provide a RS-485 and a UART Interface. Note that the supply as well as the interfaces are galvanically isolated from the rest of the PCB as well as each other. As a result, the <em>VCC</em> and <em>GND</em> Pins for the serial interfaces <em>are required</em> and not optional!</p>
+<p>To program the board, the SWD interface is located on the 6-Pin 2.54mm header at the bottom of the PCB. The Pinout follows the standard ST-Link layout, with pin 1 indicating the VDD_Target Pin of the ST-Link. The Debugging interface is <em>not</em> isolated from the battery potential.</p>
+<p>After programming and turning on the PCB for the first time, the display should show information about the cell voltage, temperature sensors, current, as well as the systick of the last measurement in milliseconds.</p>
+<p>If everything works up to this point, the battery tester can be connected to the Battery. For that, the positive current wire of the cell tester is connected with the Load+ terminal of the PCB via a cable lug and an M8 screw. The Sense+ wire of the battery tester has to be connected with the Bat+ terminal, together with the positive terminal cable coming from the Battery. The negative terminal of the Battery is directly connected with the negative sense wire and negative current wire from the battery tester.</p>
+<p><img alt="BMS PCB Design" src="_images/BMS_PCB.png" /></p>
+<section id="repo-organization">
+<h2>Repo organization<a class="headerlink" href="#repo-organization" title="Link to this heading"></a></h2>
+<p>This repository is structured in three main subfolders:</p>
+<ul class="simple">
+<li><p>The Hardware folder holds all necessary PCB schematic, Layout and production files</p></li>
+<li><p>The Firmware folder contains the STM32 Source Code and supporting files</p></li>
+<li><p>The Docs Folder contains the documentation of the project</p></li>
+</ul>
+</section>
+<section id="toolchains">
+<h2>Toolchains<a class="headerlink" href="#toolchains" title="Link to this heading"></a></h2>
+<p>To work on this project it is required to install a toolchain to work with STMs .ioc format. While the VSCode Plugin in combination with CubeMX is getting continuously better, I recommend installing the STM32 Cube IDE for working with the Firmware. Furthermore, to view and edit the schematic and Layout, a KiCAD 7 or newer installation is required. The 3D models for the stand are modeled in Fusion 360 but are included as .step and .stl in this repo, so any 3D CAD program should do the job.</p>
+<p>The logging Software for a connected PC is written in Python. Dependencies can be installed via pip using the requirements.txt file. Note that the serial interface used for the main bus between the host and BMS boards is based on RS-485, so an RS-485 to USB converter is required for connecting to the bus.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Hardware.html" class="btn btn-neutral float-right" title="Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EET TU Berlin Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

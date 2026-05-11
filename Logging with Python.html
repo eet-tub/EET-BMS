@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logging with Python &mdash; EET_BMS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Safety" href="Safety.html" />
+    <link rel="prev" title="Initialising and testing the BMS for the first time" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            EET_BMS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Getting%20started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html">Firmware Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Firmware%20Overview.html#power-source">Power Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Known%20quirks%20and%20errors.html">Known quirks and errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BMS%20Assembly.html">BMS Assembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html">BMS Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration%20for%20the%20BMS.html#interface-rs485">Interface RS485</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configurations%20for%20the%20Debugger%20in%20CubeIDE.html">Configurations for the Debugger in CubeIDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html">Initialising and testing the BMS for the first time</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Logging with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Safety.html">Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html">License Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="License.html#license-hardware-and-documentation">License Hardware and Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EET_BMS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Logging with Python</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Logging with Python.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="logging-with-python">
+<span id="logging"></span><h1>Logging with Python<a class="headerlink" href="#logging-with-python" title="Link to this heading"></a></h1>
+<p>To log the measured values from the Battery Management System (BMS), you need to have Python installed. After installing Python, you can use the script located at <code class="docutils literal notranslate"><span class="pre">Logging_script/main</span></code>. First, install the required packages listed in the script’s initial lines, then start the script.</p>
+<p>When you run the script, you will be prompted to specify the port to which the BMS is connected. The available options depend on the number of USB ports in use. After selecting the correct port, enter the number of BMS units connected. The RS485 interface allows multiple BMS units to be connected simultaneously, but each BMS must have a unique ID. Note that the first BMS should use ID <code class="docutils literal notranslate"><span class="pre">1</span></code>, the second ID <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so on.</p>
+<p>Next, you will need to set the logging interval (in seconds) and specify a name for the output folder.</p>
+<p>Once the script starts, it will create a folder containing a CSV file for each connected BMS, where the logged data will be stored.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>Time</p></th>
+<th class="head"><p>BMS_ID</p></th>
+<th class="head"><p>step</p></th>
+<th class="head"><p>Cell_V_1</p></th>
+<th class="head"><p>Cell_V_2</p></th>
+<th class="head"><p>Cell_V_3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2026-04-21</p></td>
+<td><p>16:51:51.222113</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>33290</p></td>
+<td><p>33300</p></td>
+<td><p>33299</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cell_V_4</p></th>
+<th class="head"><p>Current</p></th>
+<th class="head"><p>Temp_1</p></th>
+<th class="head"><p>Temp_2</p></th>
+<th class="head"><p>Temp_3</p></th>
+<th class="head"><p>Tic</p></th>
+<th class="head"><p>SOC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>33306</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>19949</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Initialising%20and%20testing%20the%20BMS%20for%20the%20first%20time.html" class="btn btn-neutral float-left" title="Initialising and testing the BMS for the first time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Safety.html" class="btn btn-neutral float-right" title="Safety" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EET TU Berlin Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
