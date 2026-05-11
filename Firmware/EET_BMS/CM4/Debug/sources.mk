@@ -27,5 +27,5 @@ Common/Src \
 Core/Src \
 Core/Startup \
 Core/TLE9012_Lib/Src \
-Drivers/STM32H7xx_HAL_Driver/Src \
+Drivers/STM32H7xx_HAL_Driver \
 
