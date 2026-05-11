@@ -20,4 +20,5 @@ The EET BMS is an open source battery management system for research and educati
    Initialising and testing the BMS for the first time
    Logging with Python
    Safety
+   License
 
