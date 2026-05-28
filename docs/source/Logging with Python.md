@@ -1,7 +1,7 @@
 (logging)=
 # Logging with Python
 
-To log the measured values from the Battery Management System (BMS), you need to have Python installed. After installing Python, you can use the script located at `Logging_script/main`. First, install the required packages listed in the script’s initial lines, then start the script.
+Before you can start with the logging you have to install python. We are using visual studio code and then mini conda. But every other possible way to use python should be no problem. After installing python, you have to install the required packages listed in the scripts initial lines, then start the script.
 
 When you run the script, you will be prompted to specify the port to which the BMS is connected. The available options depend on the number of USB ports in use. After selecting the correct port, enter the number of BMS units connected. The RS485 interface allows multiple BMS units to be connected simultaneously, but each BMS must have a unique ID. Note that the first BMS should use ID `1`, the second ID `2`, and so on.
 

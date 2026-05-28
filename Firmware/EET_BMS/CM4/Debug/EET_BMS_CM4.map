@@ -5689,8 +5689,9 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0810279c                SAI1_IRQHandler
                 0x0810279c                DMA1_Stream3_IRQHandler
  *fill*         0x0810279e        0x2 
- .text.initAMS  0x081027a0       0xc0 ./Core/TLE9012_Lib/Src/TLE_Abstraction.o
+ .text.initAMS  0x081027a0       0xbc ./Core/TLE9012_Lib/Src/TLE_Abstraction.o
                 0x081027a0                initAMS
+ *fill*         0x0810285c        0x4 
  .text.amsCellMeasurement
                 0x08102860      0x1c4 ./Core/TLE9012_Lib/Src/TLE_Abstraction.o
                 0x08102860                amsCellMeasurement

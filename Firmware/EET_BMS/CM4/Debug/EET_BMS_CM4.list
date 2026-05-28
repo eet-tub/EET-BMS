@@ -4979,11 +4979,11 @@ uint8 initAMS(UART_HandleTypeDef* huart, uint8 numofcells, uint8 numofaux)
  81027ac:	4613      	mov	r3, r2
  81027ae:	70bb      	strb	r3, [r7, #2]
 	numberofcells = numofcells;
- 81027b0:	4a27      	ldr	r2, [pc, #156]	@ (8102850 <initAMS+0xb0>)
+ 81027b0:	4a26      	ldr	r2, [pc, #152]	@ (810284c <initAMS+0xac>)
  81027b2:	78fb      	ldrb	r3, [r7, #3]
  81027b4:	7013      	strb	r3, [r2, #0]
 	numberofauxchannels = numofaux;
- 81027b6:	4a27      	ldr	r2, [pc, #156]	@ (8102854 <initAMS+0xb4>)
+ 81027b6:	4a26      	ldr	r2, [pc, #152]	@ (8102850 <initAMS+0xb0>)
  81027b8:	78bb      	ldrb	r3, [r7, #2]
  81027ba:	7013      	strb	r3, [r2, #0]
 
@@ -5019,7 +5019,7 @@ uint8 initAMS(UART_HandleTypeDef* huart, uint8 numofcells, uint8 numofaux)
  81027f4:	2000      	movs	r0, #0
  81027f6:	f000 fc37 	bl	8103068 <configMultiread>
 	amsConfigTempSense(3, tempCurrentSource);
- 81027fa:	4b17      	ldr	r3, [pc, #92]	@ (8102858 <initAMS+0xb8>)
+ 81027fa:	4b16      	ldr	r3, [pc, #88]	@ (8102854 <initAMS+0xb4>)
  81027fc:	781b      	ldrb	r3, [r3, #0]
  81027fe:	4619      	mov	r1, r3
  8102800:	2003      	movs	r0, #3
@@ -5028,43 +5028,43 @@ uint8 initAMS(UART_HandleTypeDef* huart, uint8 numofcells, uint8 numofaux)
  8102806:	f64f 701e 	movw	r0, #65310	@ 0xff1e
  810280a:	f000 f995 	bl	8102b38 <amsConfigOverVoltage>
 	amsConfigUnderVoltage(DEFAULT_UV);
- 810280e:	f44f 70e1 	mov.w	r0, #450	@ 0x1c2
- 8102812:	f000 f97d 	bl	8102b10 <amsConfigUnderVoltage>
+ 810280e:	207a      	movs	r0, #122	@ 0x7a
+ 8102810:	f000 f97e 	bl	8102b10 <amsConfigUnderVoltage>
 	serveWatchdog(tle_deviceadr);
- 8102816:	4b11      	ldr	r3, [pc, #68]	@ (810285c <initAMS+0xbc>)
- 8102818:	781b      	ldrb	r3, [r3, #0]
- 810281a:	4618      	mov	r0, r3
- 810281c:	f000 fc14 	bl	8103048 <serveWatchdog>
+ 8102814:	4b10      	ldr	r3, [pc, #64]	@ (8102858 <initAMS+0xb8>)
+ 8102816:	781b      	ldrb	r3, [r3, #0]
+ 8102818:	4618      	mov	r0, r3
+ 810281a:	f000 fc15 	bl	8103048 <serveWatchdog>
 	amsClearCells();
- 8102820:	f000 f99e 	bl	8102b60 <amsClearCells>
+ 810281e:	f000 f99f 	bl	8102b60 <amsClearCells>
 
 	writeReg(tle_deviceadr, INT_OT_WARN_CONF, INTERNAL_OVERTEMP); //Set Internal Temperature Overtemp Fault Temp
- 8102824:	4b0d      	ldr	r3, [pc, #52]	@ (810285c <initAMS+0xbc>)
- 8102826:	781b      	ldrb	r3, [r3, #0]
- 8102828:	f44f 722f 	mov.w	r2, #700	@ 0x2bc
- 810282c:	2105      	movs	r1, #5
- 810282e:	4618      	mov	r0, r3
- 8102830:	f000 fb2a 	bl	8102e88 <writeReg>
+ 8102822:	4b0d      	ldr	r3, [pc, #52]	@ (8102858 <initAMS+0xb8>)
+ 8102824:	781b      	ldrb	r3, [r3, #0]
+ 8102826:	f44f 722f 	mov.w	r2, #700	@ 0x2bc
+ 810282a:	2105      	movs	r1, #5
+ 810282c:	4618      	mov	r0, r3
+ 810282e:	f000 fb2b 	bl	8102e88 <writeReg>
 	writeReg(tle_deviceadr, FAULT_MASK, 0xFFE0); //Activates Error Indication Pin and Enables all Faults to Trigger a Error
- 8102834:	4b09      	ldr	r3, [pc, #36]	@ (810285c <initAMS+0xbc>)
- 8102836:	781b      	ldrb	r3, [r3, #0]
- 8102838:	f64f 72e0 	movw	r2, #65504	@ 0xffe0
- 810283c:	210a      	movs	r1, #10
- 810283e:	4618      	mov	r0, r3
- 8102840:	f000 fb22 	bl	8102e88 <writeReg>
+ 8102832:	4b09      	ldr	r3, [pc, #36]	@ (8102858 <initAMS+0xb8>)
+ 8102834:	781b      	ldrb	r3, [r3, #0]
+ 8102836:	f64f 72e0 	movw	r2, #65504	@ 0xffe0
+ 810283a:	210a      	movs	r1, #10
+ 810283c:	4618      	mov	r0, r3
+ 810283e:	f000 fb23 	bl	8102e88 <writeReg>
 
 	return 0;
- 8102844:	2300      	movs	r3, #0
+ 8102842:	2300      	movs	r3, #0
 }
- 8102846:	4618      	mov	r0, r3
- 8102848:	3708      	adds	r7, #8
- 810284a:	46bd      	mov	sp, r7
- 810284c:	bd80      	pop	{r7, pc}
- 810284e:	bf00      	nop
- 8102850:	10000663 	.word	0x10000663
- 8102854:	10000664 	.word	0x10000664
- 8102858:	1000002d 	.word	0x1000002d
- 810285c:	10000662 	.word	0x10000662
+ 8102844:	4618      	mov	r0, r3
+ 8102846:	3708      	adds	r7, #8
+ 8102848:	46bd      	mov	sp, r7
+ 810284a:	bd80      	pop	{r7, pc}
+ 810284c:	10000663 	.word	0x10000663
+ 8102850:	10000664 	.word	0x10000664
+ 8102854:	1000002d 	.word	0x1000002d
+ 8102858:	10000662 	.word	0x10000662
+ 810285c:	00000000 	.word	0x00000000
 
 08102860 <amsCellMeasurement>:
  * @param *module Pointer to the Cell_Module struct holding measurement data

@@ -24,7 +24,7 @@ To use the BMS there are different free programs needed. For the STM32 programs 
 
 ## License 
 
-The license information is found in {ref}`License`. There are two licenses. One for the Software which is a MIT license. The second one is for the Hardware, which is CERN Open Hardware Licence.
+The license information is found in {ref}`License`. There are two licenses. One for the Software, which is a MIT license. The second one is for the Hardware and documentation, which is Creative Commons Attribution 4.0 International License and can be found on https://creativecommons.org/licenses/by-sa/4.0/
 
 
 
