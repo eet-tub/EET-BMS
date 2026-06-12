@@ -377,12 +377,66 @@ uint8_t uartRead(uint8* buffer, uint8 datalen)
 	return uartstatus;
 }
 
+/* flush: in readwrite before and after RX finish clearing huart RX byte duty*/
+static void tle_rx_flush(void){
+	volatile uint8_t dummy;
+	// HAL_UART_AbortRecieve(&huart4);
+
+	__HAL_UART_CLEAR_OREFLAG(&huart4);
+	__HAL_UART_CLEAR_FEFLAG(&huart4);
+	__HAL_UART_CLEAR_NEFLAG(&huart4);
+
+	while(__HAL_UART_GET_FLAG(&huart4, USART_ISR_RXNE_RXFNE)){
+		dummy = (uint8_t)(huart4.Instance->RDR & 0xFF);
+		(void)dummy;
+	}
+	#ifdef UART_RXDATA_FLUSH_REQUEST
+	__HAL_UART_SEND_REQ(&huart4, UART_RXDATA_FLUSH_REQUEST);
+	#endif
+}
+
 HAL_StatusTypeDef readWrite(uint8_t* txbuffer, uint8_t txlen, uint8_t* rxbuffer, uint8_t rxlen)
 {
 	tx_cplt_flag = 0;
 	rx_cplt_flag = 0;
 
 	uint8_t uart_rx_buffer[rxlen+txlen];
+
+	for(uint8_t i = 0; i < (rxlen + txlen); i++){
+		uart_rx_buffer[i] = 0;
+	}
+
+	tle_rx_flush();
+	HAL_StatusTypeDef rx_status = HAL_UART_Receieve_IT(&huart4,
+	uart_rx_buffer, rxlen + txlen);
+
+	if(rx_status != HAL_OK){
+		return rx_status;
+	}
+
+	HAL_HalfDuplex_EnableTransmitter(tle_uart);
+	HAL_StatusTypeDef tx_status = HAL_UART_Transmit_IT(tle_uart, bxbuffer, txlen);
+
+	if(tx_status != HAL_OK){
+		HAL_UART_AbortReceive(&huart4);
+		return tx_status;
+	}
+
+	uint8_t starttime = HAL_GetTick();
+
+	while(!(tx_cplt_flag && rx_cplt_flag)){
+		if((HAL_GetTick() - starttime) > UART_TIMEOUT){
+			HAL_UART_AbortReceive(&huart4);
+			return HAL_TIMEOUT;
+		}
+	}
+
+	memcpy(rxbuffer, &uart_rx_buffer[txlen], rxlen);
+
+	// tle_rx_flush();
+
+	return HAL_OK;
+/*
 	HAL_UART_Receive_IT(&huart4, uart_rx_buffer, rxlen+txlen);
 	HAL_HalfDuplex_EnableTransmitter(tle_uart);
 	HAL_UART_Transmit_IT(tle_uart, txbuffer, txlen);
@@ -399,6 +453,7 @@ HAL_StatusTypeDef readWrite(uint8_t* txbuffer, uint8_t txlen, uint8_t* rxbuffer,
 	memcpy(rxbuffer, &uart_rx_buffer[txlen],rxlen);
 
 	return HAL_OK;
+	*/
 }
 
 uint8_t awaitRxCplt()
