@@ -41,7 +41,7 @@ void BMS_Sleep();
 void BMS_Measure();
 Bms_Error_t BMS_CheckLimits();
 void BMS_Balance();
-
+void BMS_ProtectionTask(void);
 void BMS_ErrorHandler(Bms_Error_t error);
 
 __weak void BMS_Balancing_Algorithm(Cell_Module_t *module); //Default Voltage based. Override for individual Balancing Algorithm

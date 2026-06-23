@@ -28,6 +28,16 @@ static Bms_State_t bms_state;
 static State_Estimation_t bms_state_estimations;
 static uint16_t tle_gendiag_reg;
 
+typedef enum
+{
+    OC_LATCH_NONE = 0,
+    OC_LATCH_CHARGE,
+    OC_LATCH_DISCHARGE
+} BMS_OcLatch_t;
+
+static BMS_OcLatch_t oc_latch = OC_LATCH_NONE;
+#define OC_CLEAR_CURRENT_A  0.10f
+
 void BMS_Init(UART_HandleTypeDef *huart,Cell_Module_t* module, uint8_t ncells, uint8_t ntemps)
 {
 
@@ -60,9 +70,10 @@ void BMS_loop()
 {
 	serveWatchdog(0);
 	BMS_Measure();
-	bms_error_state = BMS_CheckLimits();
+	BMS_ProtectionTask();
+	//bms_error_state = BMS_CheckLimits();
 	BMS_Balance();
-	BMS_ErrorHandler(bms_error_state);
+	//BMS_ErrorHandler(bms_error_state);
 }
 
 void BMS_Wakeup()
@@ -80,6 +91,51 @@ void BMS_Sleep()
 void BMS_Measure()
 {
 	amsCellMeasurement(tle_module);
+}
+
+static BMS_OcLatch_t BMS_GetOvercurrentDirection(void)
+{
+    /*
+     * Current sign convention:
+     * Negative current = charging
+     * Positive current = discharging
+     */
+
+    if(tle_module->current < (-bms_limits.max_current_charge))
+    {
+        return OC_LATCH_CHARGE;
+    }
+
+    if(tle_module->current > bms_limits.max_current_discharge)
+    {
+        return OC_LATCH_DISCHARGE;
+    }
+
+    return OC_LATCH_NONE;
+}
+
+static void BMS_ApplyOvercurrentOutput(BMS_OcLatch_t latch)
+{
+    if(latch == OC_LATCH_CHARGE)
+    {
+        /*
+         * Charge overcurrent: stoping the charging overcurrent
+         * !!!
+         * Hardware mapping seems inverted, therefore BAT_Discharge_Pin drived here.
+         */
+        HAL_GPIO_WritePin(BAT_Discharge_GPIO_Port, BAT_Discharge_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(BAT_Charge_GPIO_Port, BAT_Charge_Pin, GPIO_PIN_SET);
+    }
+    else if(latch == OC_LATCH_DISCHARGE)
+    {
+        /*
+         * Discharge overcurrent:
+         *
+         * Hardware mapping seems inverted, therefore BAT_Charge_Pin drived here.
+         */
+        HAL_GPIO_WritePin(BAT_Charge_GPIO_Port, BAT_Charge_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(BAT_Discharge_GPIO_Port, BAT_Discharge_Pin, GPIO_PIN_SET);
+    }
 }
 
 Bms_Error_t BMS_CheckLimits()
@@ -143,6 +199,72 @@ Bms_Error_t BMS_CheckLimits()
 	}
 
 	return BMS_NO_ERROR;
+}
+
+void BMS_ProtectionTask(void)
+{
+    Bms_Error_t measured_error = BMS_CheckLimits();
+    BMS_OcLatch_t oc_now = BMS_GetOvercurrentDirection();
+
+    /*
+     * If a new overcurrent event is detected, store its direction.
+     * The latch must not be cleared just because current becomes 0 A.
+     */
+    if(oc_now != OC_LATCH_NONE)
+    {
+        oc_latch = oc_now;
+    }
+
+    /*
+     * Charge overcurrent latch active:
+     *
+     * Charge path remains disabled.
+     * Discharge path remains enabled.
+     *
+     * The latch is cleared only when discharge current is detected.
+     */
+    if(oc_latch == OC_LATCH_CHARGE)
+    {
+        if(tle_module->current > OC_CLEAR_CURRENT_A)
+        {
+            oc_latch = OC_LATCH_NONE;
+        }
+        else
+        {
+            bms_error_state = BMS_OVERCURRENT;
+            BMS_ApplyOvercurrentOutput(OC_LATCH_CHARGE);
+            return;
+        }
+    }
+
+    /*
+     * Discharge overcurrent latch active:
+     *
+     * Discharge path remains disabled.
+     * Charge path remains enabled.
+     *
+     * The latch is cleared only when charge current is detected.
+     */
+    if(oc_latch == OC_LATCH_DISCHARGE)
+    {
+        if(tle_module->current < (-OC_CLEAR_CURRENT_A))
+        {
+            oc_latch = OC_LATCH_NONE;
+        }
+        else
+        {
+            bms_error_state = BMS_OVERCURRENT;
+            BMS_ApplyOvercurrentOutput(OC_LATCH_DISCHARGE);
+            return;
+        }
+    }
+
+    /*
+     * No overcurrent latch is active.
+     * Handle all normal BMS errors using the existing error handler.
+     */
+    bms_error_state = measured_error;
+    BMS_ErrorHandler(bms_error_state);
 }
 
 void BMS_Balance()
