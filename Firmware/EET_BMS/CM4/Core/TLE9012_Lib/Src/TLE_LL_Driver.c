@@ -422,7 +422,7 @@ HAL_StatusTypeDef readWrite(uint8_t* txbuffer, uint8_t txlen, uint8_t* rxbuffer,
 		return tx_status;
 	}
 
-	uint8_t starttime = HAL_GetTick();
+	uint32_t starttime = HAL_GetTick();
 
 	while(!(tx_cplt_flag && rx_cplt_flag)){
 		if((HAL_GetTick() - starttime) > UART_TIMEOUT){
