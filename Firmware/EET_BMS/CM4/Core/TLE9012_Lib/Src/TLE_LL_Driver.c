@@ -407,7 +407,7 @@ HAL_StatusTypeDef readWrite(uint8_t* txbuffer, uint8_t txlen, uint8_t* rxbuffer,
 	}
 
 	tle_rx_flush();
-	HAL_StatusTypeDef rx_status = HAL_UART_Receieve_IT(&huart4,
+	HAL_StatusTypeDef rx_status = HAL_UART_Receive_IT(&huart4,
 	uart_rx_buffer, rxlen + txlen);
 
 	if(rx_status != HAL_OK){
@@ -415,7 +415,7 @@ HAL_StatusTypeDef readWrite(uint8_t* txbuffer, uint8_t txlen, uint8_t* rxbuffer,
 	}
 
 	HAL_HalfDuplex_EnableTransmitter(tle_uart);
-	HAL_StatusTypeDef tx_status = HAL_UART_Transmit_IT(tle_uart, bxbuffer, txlen);
+	HAL_StatusTypeDef tx_status = HAL_UART_Transmit_IT(tle_uart, txbuffer, txlen);
 
 	if(tx_status != HAL_OK){
 		HAL_UART_AbortReceive(&huart4);
