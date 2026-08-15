@@ -55,15 +55,22 @@ void BMS_Init(UART_HandleTypeDef *huart,Cell_Module_t* module, uint8_t ncells, u
 	serveWatchdog(0);
 	HAL_Delay(1000);
 	serveWatchdog(0);
-	amsCellMeasurement(module);
-	serveWatchdog(0);
-	HAL_Delay(100);
-	serveWatchdog(0);
-	amsCellMeasurement(module);
-	amsCalibrateCurrentSense(module->currentsenseraw);
+	//amsCellMeasurement(module);
+	//serveWatchdog(0);
+	//HAL_Delay(100);
+	//serveWatchdog(0);
+	//amsCellMeasurement(module);
+	//amsCalibrateCurrentSense(module->currentsenseraw);
 
 	HAL_GPIO_WritePin(BAT_Charge_GPIO_Port, BAT_Charge_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(BAT_Discharge_GPIO_Port, BAT_Discharge_Pin, GPIO_PIN_SET);
+    serveWatchdog(0);
+    HAL_Delay(100);
+
+    serveWatchdog(0);
+    amsCellMeasurement(module);
+    amsCalibrateCurrentSense(module->currentsenseraw);
+
 	resetGenDiag();
 	serveWatchdog(0);
 }
