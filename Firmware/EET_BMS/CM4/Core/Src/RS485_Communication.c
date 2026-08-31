@@ -168,20 +168,37 @@ void rs485_command_send_cell_data_as_string(uint8_t payloadlen, uint8_t* payload
 
 	tx_buffer[0] = 0x80;
 	tx_buffer[1] = GET_MODULE_INFO_AS_STRING;
+	float soc_avg =
+	    (rs485_estimations->SoC[0] +
+	     rs485_estimations->SoC[1] +
+	     rs485_estimations->SoC[2] +
+	     rs485_estimations->SoC[3]) / 4.0f;
 
-	txlen = sprintf((char*) &tx_buffer[3], "%d,%d,%lu,%lu,%lu,%lu,%ld,%lu,%lu,%lu,%lu,%f\n",
-		RS485_ID,
-		rollingcounter,
-		(uint32_t)((float) rs485_module->cellVoltages[0]*50000)/65536,
-		(uint32_t)((float) rs485_module->cellVoltages[1]*50000)/65536,
-		(uint32_t)((float) rs485_module->cellVoltages[2]*50000)/65536,
-		(uint32_t)((float) rs485_module->cellVoltages[3]*50000)/65536,
-		(int32_t)(1000*rs485_module->current),
-		(int32_t)(rs485_module->Temperatures[0]),
-		(int32_t)(rs485_module->Temperatures[1]),
-		(int32_t)(rs485_module->Temperatures[2]),
-		HAL_GetTick(),
-		rs485_estimations->module_SoC);
+	txlen = sprintf((char*) &tx_buffer[3],
+	    "%d,%d,%lu,%lu,%lu,%lu,%ld,%lu,%lu,%lu,%lu,%f,%f,%f,%f,%f,%f\n",
+	    RS485_ID,
+	    rollingcounter,
+	    (uint32_t)((float) rs485_module->cellVoltages[0]*50000)/65536,
+	    (uint32_t)((float) rs485_module->cellVoltages[1]*50000)/65536,
+	    (uint32_t)((float) rs485_module->cellVoltages[2]*50000)/65536,
+	    (uint32_t)((float) rs485_module->cellVoltages[3]*50000)/65536,
+	    (int32_t)(1000*rs485_module->current),
+	    (int32_t)(1000*rs485_module->Temperatures[0]),
+	    (int32_t)(1000*rs485_module->Temperatures[1]),
+	    (int32_t)(1000*rs485_module->Temperatures[2]),
+	    HAL_GetTick(),
+
+	    /* Old Coulomb Counting SOC */
+	    rs485_estimations->module_SoC,
+
+	    /* Individual cell EKF SOC */
+	    rs485_estimations->SoC[0],
+	    rs485_estimations->SoC[1],
+	    rs485_estimations->SoC[2],
+	    rs485_estimations->SoC[3],
+
+	    /* Average EKF SOC */
+	    soc_avg);
 
 	tx_buffer[2] = txlen+1;
 	tx_buffer[txlen+3] = '\n';
