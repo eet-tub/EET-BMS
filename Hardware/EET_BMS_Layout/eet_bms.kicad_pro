@@ -158,10 +158,6 @@
         [
           "drill_out_of_range|127319235|91898735|46243496-d575-4a78-9304-9d66c8cba855|00000000-0000-0000-0000-000000000000",
           ""
-        ],
-        [
-          "lib_footprint_mismatch|143383235|94220734|ec6b9c49-c7c2-4702-a00a-c924e28ac495|00000000-0000-0000-0000-000000000000",
-          ""
         ]
       ],
       "meta": {
@@ -573,7 +569,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "eet_bms Rev. 1.kicad_pro",
+    "filename": "eet_bms.kicad_pro",
     "version": 3
   },
   "net_settings": {
